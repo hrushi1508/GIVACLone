@@ -1,0 +1,27 @@
+{
+  "announcement": "✨ Flat 10% Off on your first order | Use Code: GIVA10 ✨",
+  "hero": {
+    "title": "Designed for The Spotlight",
+    "subtitle": "The Anushka Sharma Silver Collection",
+    "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80&w=1200",
+    "cta": "Shop Collection"
+  },
+  "categories": [
+    {
+      "name": "Rings",
+      "img": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&q=80"
+    },
+    {
+      "name": "Earrings",
+      "img": "https://images.unsplash.com/photo-1630019058368-e975f9c34907?w=200&q=80"
+    },
+    {
+      "name": "Necklaces",
+      "img": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&q=80"
+    },
+    {
+      "name": "Bracelets",
+      "img": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=200&q=80"
+    }
+  ]
+}

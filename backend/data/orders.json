@@ -1,0 +1,74 @@
+[
+  {
+    "order_id": "GIVA-1001",
+    "user_id": "user_101",
+    "items": [
+      { "product_id": 1, "name": "Classic Silver Anushka Sharma Ring", "quantity": 1, "price": 2499 }
+    ],
+    "subtotal": 2499,
+    "discount": 250,
+    "promo_used": "GIVA10",
+    "total": 2249,
+    "status": "Delivered",
+    "payment_method": "UPI",
+    "date": "2026-03-28T10:30:00Z"
+  },
+  {
+    "order_id": "GIVA-1002",
+    "user_id": "user_103",
+    "items": [
+      { "product_id": 2, "name": "Rose Gold Dewdrop Earrings", "quantity": 2, "price": 1899 },
+      { "product_id": 3, "name": "Zircon Solitaire Necklace", "quantity": 1, "price": 3299 }
+    ],
+    "subtotal": 7097,
+    "discount": 500,
+    "promo_used": "WELCOME500",
+    "total": 6597,
+    "status": "Shipped",
+    "payment_method": "Credit Card",
+    "date": "2026-04-01T14:15:00Z"
+  },
+  {
+    "order_id": "GIVA-1003",
+    "user_id": "user_111",
+    "items": [
+      { "product_id": 4, "name": "Interlocked Heart Bracelet", "quantity": 1, "price": 2199 }
+    ],
+    "subtotal": 2199,
+    "discount": 0,
+    "promo_used": null,
+    "total": 2199,
+    "status": "Processing",
+    "payment_method": "COD",
+    "date": "2026-04-02T09:00:00Z"
+  },
+  {
+    "order_id": "GIVA-1004",
+    "user_id": "user_105",
+    "items": [
+      { "product_id": 1, "name": "Classic Silver Anushka Sharma Ring", "quantity": 1, "price": 2499 },
+      { "product_id": 4, "name": "Interlocked Heart Bracelet", "quantity": 1, "price": 2199 }
+    ],
+    "subtotal": 4698,
+    "discount": 939,
+    "promo_used": "FESTIVE20",
+    "total": 3759,
+    "status": "Placed",
+    "payment_method": "Net Banking",
+    "date": "2026-04-03T08:45:00Z"
+  },
+  {
+    "order_id": "GIVA-1005",
+    "user_id": "user_101",
+    "items": [
+      { "product_id": 3, "name": "Zircon Solitaire Necklace", "quantity": 1, "price": 3299 }
+    ],
+    "subtotal": 3299,
+    "discount": 330,
+    "promo_used": "GIVA10",
+    "total": 2969,
+    "status": "Cancelled",
+    "payment_method": "UPI",
+    "date": "2026-03-25T11:20:00Z"
+  }
+]

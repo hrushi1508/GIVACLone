@@ -1,0 +1,14 @@
+# Web Framework
+Flask==3.0.2
+
+# Cross-Origin Resource Sharing (Essential for React to talk to Flask)
+Flask-CORS==4.0.0
+
+# Utility for environment variables (optional but recommended)
+python-dotenv==1.0.1
+
+# HTTP Request handling (if your backend calls external APIs)
+requests==2.31.0
+
+# WSGI Server for production-like local testing
+gunicorn==21.2.0

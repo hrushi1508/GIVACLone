@@ -1,0 +1,22 @@
+[
+  { "id": 1, "name": "Rings", "image": "https://images.unsplash.com/photo-1603561596112-0a132b757442?w=500&h=500&fit=crop" },
+  { "id": 2, "name": "Earrings", "image": "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=500&h=500&fit=crop" },
+  { "id": 3, "name": "Pendants", "image": "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500&h=500&fit=crop" },
+  { "id": 4, "name": "Bracelets", "image": "https://images.unsplash.com/photo-1611080626919-7cf5a9c0dfe0?w=500&h=500&fit=crop" },
+  { "id": 5, "name": "Anklets", "image": "https://images.unsplash.com/photo-1600180758895-6c7c3a6f7b75?w=500&h=500&fit=crop" },
+  { "id": 6, "name": "Bangles", "image": "https://images.unsplash.com/photo-1627293509201-8c9b7c8f3d2f?w=500&h=500&fit=crop" },
+  { "id": 7, "name": "Mangalsutras", "image": "https://images.unsplash.com/photo-1626248801379-51a0748a5f96?w=500&h=500&fit=crop" },
+  { "id": 8, "name": "Silver Chains", "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=500&fit=crop" },
+  { "id": 9, "name": "Nose Pins", "image": "https://images.unsplash.com/photo-1616150638538-ffb0679a3fc4?w=500&h=500&fit=crop" },
+  { "id": 10, "name": "Toe Rings", "image": "https://images.unsplash.com/photo-1603968709808-99640d3974a4?w=500&h=500&fit=crop" },
+  { "id": 11, "name": "Necklaces", "image": "https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?w=500&h=500&fit=crop" },
+  { "id": 12, "name": "Sets", "image": "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=500&h=500&fit=crop" },
+  { "id": 13, "name": "Men's Jewelry", "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500&h=500&fit=crop" },
+  { "id": 14, "name": "Personalised", "image": "https://images.unsplash.com/photo-1615655096345-64a0e2f7bd77?w=500&h=500&fit=crop" },
+  { "id": 15, "name": "Perfumes", "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&h=500&fit=crop" },
+  { "id": 16, "name": "Watches", "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=500&fit=crop" },
+  { "id": 17, "name": "Kids Jewelry", "image": "https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?w=500&h=500&fit=crop" },
+  { "id": 18, "name": "Gold Jewelry", "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500&h=500&fit=crop" },
+  { "id": 19, "name": "Coins", "image": "https://images.unsplash.com/photo-1589482239391-a034cb57949c?w=500&h=500&fit=crop" },
+  { "id": 20, "name": "Gift Cards", "image": "https://images.unsplash.com/photo-1549463599-242aa29a5017?w=500&h=500&fit=crop" }
+]

@@ -1,0 +1,224 @@
+[
+    {
+        "id": "user_101",
+        "name": "Anushka Sharma",
+        "email": "anushka@giva.co",
+        "password": "password123",
+        "phone": "+91 99999 88888",
+        "address": "Bandra West, Mumbai, Maharashtra",
+        "joined_date": "2024-01-15",
+        "role": "customer"
+    },
+    {
+        "id": "user_102",
+        "name": "Rohan Malhotra",
+        "email": "rohan.m@gmail.com",
+        "password": "rohan@2024",
+        "phone": "+91 98765 43210",
+        "address": "DLF Phase 3, Gurgaon, Haryana",
+        "joined_date": "2024-02-01",
+        "role": "customer"
+    },
+    {
+        "id": "user_103",
+        "name": "Priya Iyer",
+        "email": "priya.iyer@outlook.com",
+        "password": "securePass!123",
+        "phone": "+91 91234 56789",
+        "address": "Indiranagar, Bangalore, Karnataka",
+        "joined_date": "2024-02-12",
+        "role": "customer"
+    },
+    {
+        "id": "user_104",
+        "name": "Arjun Reddy",
+        "email": "arjun.reddy@yahoo.com",
+        "password": "arjunReddy99",
+        "phone": "+91 88887 77776",
+        "address": "Jubilee Hills, Hyderabad, Telangana",
+        "joined_date": "2024-02-28",
+        "role": "customer"
+    },
+    {
+        "id": "user_105",
+        "name": "Meera Das",
+        "email": "meera.das@me.com",
+        "password": "meeraDas#88",
+        "phone": "+91 77766 55544",
+        "address": "Salt Lake, Kolkata, West Bengal",
+        "joined_date": "2024-03-05",
+        "role": "customer"
+    },
+    {
+        "id": "user_106",
+        "name": "Vikram Singh",
+        "email": "vikram.s@rediffmail.com",
+        "password": "vikramSingh106",
+        "phone": "+91 90000 11111",
+        "address": "Civil Lines, Jaipur, Rajasthan",
+        "joined_date": "2024-03-10",
+        "role": "customer"
+    },
+    {
+        "id": "user_107",
+        "name": "Sanya Kapoor",
+        "email": "sanya.k@icloud.com",
+        "password": "sanyaKapoor7",
+        "phone": "+91 92222 33333",
+        "address": "Greater Kailash, New Delhi, Delhi",
+        "joined_date": "2024-03-15",
+        "role": "customer"
+    },
+    {
+        "id": "user_108",
+        "name": "Karthik Raja",
+        "email": "karthik.raja@zoho.com",
+        "password": "karthikRaja22",
+        "phone": "+91 93333 44444",
+        "address": "Adyar, Chennai, Tamil Nadu",
+        "joined_date": "2024-03-18",
+        "role": "customer"
+    },
+    {
+        "id": "user_109",
+        "name": "Ishita Bhalla",
+        "email": "ishita.b@gmail.com",
+        "password": "ishitaB@109",
+        "phone": "+91 94444 55555",
+        "address": "Vasant Vihar, New Delhi, Delhi",
+        "joined_date": "2024-03-22",
+        "role": "customer"
+    },
+    {
+        "id": "user_110",
+        "name": "Aditya Verma",
+        "email": "aditya.v@hotmail.com",
+        "password": "adityaVerma0",
+        "phone": "+91 95555 66666",
+        "address": "Kothrud, Pune, Maharashtra",
+        "joined_date": "2024-03-25",
+        "role": "customer"
+    },
+    {
+        "id": "user_111",
+        "name": "Zoya Akhtar",
+        "email": "zoya.akhtar@gmail.com",
+        "password": "zoyaAkhtar111",
+        "phone": "+91 96666 77777",
+        "address": "Juhu, Mumbai, Maharashtra",
+        "joined_date": "2024-03-28",
+        "role": "customer"
+    },
+    {
+        "id": "user_112",
+        "name": "Kabir Thapar",
+        "email": "kabir.t@live.com",
+        "password": "kabirThapar12",
+        "phone": "+91 97777 88888",
+        "address": "Gomti Nagar, Lucknow, Uttar Pradesh",
+        "joined_date": "2024-04-01",
+        "role": "customer"
+    },
+    {
+        "id": "user_113",
+        "name": "Riya Sen",
+        "email": "riya.sen@yahoo.in",
+        "password": "riyaSen#113",
+        "phone": "+91 98888 99999",
+        "address": "Alipore, Kolkata, West Bengal",
+        "joined_date": "2024-04-05",
+        "role": "customer"
+    },
+    {
+        "id": "user_114",
+        "name": "Siddharth Jain",
+        "email": "sid.jain@protonmail.com",
+        "password": "sidJain@114",
+        "phone": "+91 99999 00000",
+        "address": "Navrangpura, Ahmedabad, Gujarat",
+        "joined_date": "2024-04-10",
+        "role": "customer"
+    },
+    {
+        "id": "user_115",
+        "name": "Ananya Pandey",
+        "email": "ananya.p@gmail.com",
+        "password": "ananyaPandey15",
+        "phone": "+91 91111 22222",
+        "address": "Lokhandwala, Mumbai, Maharashtra",
+        "joined_date": "2024-04-12",
+        "role": "customer"
+    },
+    {
+        "id": "user_116",
+        "name": "Varun Dhawan",
+        "email": "varun.d@icloud.com",
+        "password": "varunDhawan16",
+        "phone": "+91 92222 33333",
+        "address": "Worli Sea Face, Mumbai, Maharashtra",
+        "joined_date": "2024-04-15",
+        "role": "customer"
+    },
+    {
+        "id": "user_117",
+        "name": "Kiara Advani",
+        "email": "kiara.a@gmail.com",
+        "password": "kiaraAdvani17",
+        "phone": "+91 93333 44444",
+        "address": "Sindhu Bhavan Road, Ahmedabad, Gujarat",
+        "joined_date": "2024-04-18",
+        "role": "customer"
+    },
+    {
+        "id": "user_118",
+        "name": "Ranbir Kapoor",
+        "email": "ranbir.k@outlook.com",
+        "password": "ranbirKapoor18",
+        "phone": "+91 94444 55555",
+        "address": "Pali Hill, Mumbai, Maharashtra",
+        "joined_date": "2024-04-20",
+        "role": "customer"
+    },
+    {
+        "id": "user_119",
+        "name": "Deepika Padukone",
+        "email": "deepika.p@gmail.com",
+        "password": "deepikaPadukone19",
+        "phone": "+91 95555 66666",
+        "address": "Prabhadevi, Mumbai, Maharashtra",
+        "joined_date": "2024-04-22",
+        "role": "customer"
+    },
+    {
+        "id": "user_120",
+        "name": "Ranveer Singh",
+        "email": "ranveer.s@gmail.com",
+        "password": "ranveerSingh20",
+        "phone": "+91 96666 77777",
+        "address": "Bandra, Mumbai, Maharashtra",
+        "joined_date": "2024-04-25",
+        "role": "customer"
+    },
+    {
+        "name": "New User",
+        "email": "new@test.com",
+        "password": "123",
+        "phone": "999",
+        "id": "user_121",
+        "joined_date": "2026-04-03"
+    },
+    {
+        "email": "user1@test.co",
+        "password": "123",
+        "name": "hrushi",
+        "id": "user_122",
+        "joined_date": "2026-04-03"
+    },
+    {
+        "email": "megha@test.co",
+        "password": "123",
+        "name": "megha",
+        "id": "user_123",
+        "joined_date": "2026-04-03"
+    }
+]
