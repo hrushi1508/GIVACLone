@@ -23,6 +23,8 @@ class DataManager:
 
     def write(self, filename, data):
         path = self._get_path(filename)
+        tmp_path = path + '.tmp'
         with self.lock:
-            with open(path, 'w') as f:
+            with open(tmp_path, 'w') as f:
                 json.dump(data, f, indent=4)
+            os.replace(tmp_path, path)

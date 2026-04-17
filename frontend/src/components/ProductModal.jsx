@@ -1,9 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Star, ShieldCheck, Truck, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
 import { useCart } from '../store/useCart';
+import { useAuth } from '../store/useAuth';
 
 export default function ProductModal({ isOpen, product, onClose, isAuthenticated, onAuthRequired }) {
   const { cart, addToCart, updateQuantity, removeItem } = useCart();
+  const { user } = useAuth();
 
   if (!product) return null;
 
@@ -87,7 +89,7 @@ export default function ProductModal({ isOpen, product, onClose, isAuthenticated
               <div className="mt-auto">
                 {!cartItem ? (
                   <button 
-                    onClick={() => handleProtectedAction(() => addToCart(product))}
+                    onClick={() => handleProtectedAction(() => addToCart(product, user?.id))}
                     className="w-full bg-giva-dark text-white py-5 rounded-sm font-bold uppercase tracking-[0.2em] text-xs hover:bg-black transition-all flex items-center justify-center gap-2"
                   >
                     Add to Bag
@@ -96,7 +98,7 @@ export default function ProductModal({ isOpen, product, onClose, isAuthenticated
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between bg-gray-50 rounded-sm border border-gray-100 p-1">
                       <button 
-                        onClick={() => handleProtectedAction(() => updateQuantity(product.id, Math.max(1, cartItem.quantity - 1)))}
+                        onClick={() => handleProtectedAction(() => updateQuantity(product.id, Math.max(1, cartItem.quantity - 1), user?.id))}
                         className="p-3 hover:bg-white hover:shadow-sm transition-all rounded-sm text-giva-dark"
                       >
                         <Minus size={16} />
@@ -107,7 +109,7 @@ export default function ProductModal({ isOpen, product, onClose, isAuthenticated
                       </span>
                       
                       <button 
-                        onClick={() => handleProtectedAction(() => updateQuantity(product.id, cartItem.quantity + 1))}
+                        onClick={() => handleProtectedAction(() => updateQuantity(product.id, cartItem.quantity + 1, user?.id))}
                         className="p-3 hover:bg-white hover:shadow-sm transition-all rounded-sm text-giva-dark"
                       >
                         <Plus size={16} />
@@ -115,7 +117,7 @@ export default function ProductModal({ isOpen, product, onClose, isAuthenticated
                     </div>
 
                     <button 
-                      onClick={() => handleProtectedAction(() => removeItem(product.id))}
+                      onClick={() => handleProtectedAction(() => removeItem(product.id, user?.id))}
                       className="w-full flex items-center justify-center gap-2 py-3 text-[10px] font-bold uppercase tracking-widest text-red-400 hover:text-red-600 transition-colors"
                     >
                       <Trash2 size={14} /> Remove Item

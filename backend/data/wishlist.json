@@ -23,5 +23,28 @@
         "products": [
             2
         ]
+    },
+    {
+        "user_id": "user_124",
+        "products": []
+    },
+    {
+        "user_id": "user_125",
+        "products": [
+            2
+        ]
+    },
+    {
+        "user_id": "user_126",
+        "products": [
+            1
+        ]
+    },
+    {
+        "user_id": "user_127",
+        "products": [
+            15,
+            1
+        ]
     }
 ]

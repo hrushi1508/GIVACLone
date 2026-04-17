@@ -220,5 +220,33 @@
         "name": "megha",
         "id": "user_123",
         "joined_date": "2026-04-03"
+    },
+    {
+        "email": "test@example.com",
+        "password": "password123",
+        "name": "Test User",
+        "id": "user_124",
+        "joined_date": "2026-04-04"
+    },
+    {
+        "email": "mega@test.co",
+        "password": "1233",
+        "name": "mega",
+        "id": "user_125",
+        "joined_date": "2026-04-04"
+    },
+    {
+        "email": "v.lakshmihrushikesh@gmail.com",
+        "password": "12345",
+        "name": "hrushi",
+        "id": "user_126",
+        "joined_date": "2026-04-09"
+    },
+    {
+        "email": "user@user.com",
+        "password": "user1234",
+        "name": "user1",
+        "id": "user_127",
+        "joined_date": "2026-04-10"
     }
 ]

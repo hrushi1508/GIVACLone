@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { X, Mail, Lock, User } from 'lucide-react';
 import { authApi } from '../utils/api';
 import { useAuth } from '../store/useAuth';
+import NotificationPopup from './NotificationPopup';
 
 export default function LoginModal({ isOpen, onClose }) {
   const [isRegister, setIsRegister] = useState(false);
   const [formData, setFormData] = useState({ email: '', password: '', name: '' });
   const [error, setError] = useState('');
+  const [popup, setPopup] = useState({ isOpen: false, title: '', message: '', type: 'info' });
   
   // Get the login function from useAuth
   const login = useAuth((state) => state.login);
@@ -21,7 +23,12 @@ export default function LoginModal({ isOpen, onClose }) {
         await authApi.register(formData);
         setIsRegister(false);
         setFormData({ email: '', password: '', name: '' }); // Clear form
-        alert('Account created! Please login.');
+        setPopup({
+          isOpen: true,
+          title: 'Account Created! 🎉',
+          message: 'Welcome to the GIVA family. Please login with your new credentials to start shopping.',
+          type: 'success'
+        });
       } else {
         const res = await authApi.login({ 
           email: formData.email, 
@@ -124,6 +131,11 @@ export default function LoginModal({ isOpen, onClose }) {
           </button>
         </p>
       </div>
+
+      <NotificationPopup 
+        {...popup} 
+        onClose={() => setPopup({ ...popup, isOpen: false })} 
+      />
     </div>
   );
 }

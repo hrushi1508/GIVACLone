@@ -1,0 +1,93 @@
+[
+    {
+        "user_id": "user_124",
+        "items": []
+    },
+    {
+        "user_id": "user_125",
+        "items": []
+    },
+    {
+        "user_id": "user_126",
+        "items": []
+    },
+    {
+        "user_id": "user_127",
+        "items": [
+            {
+                "category": "Rings",
+                "description": "Exquisite 925 Silver ring for timeless elegance.",
+                "id": 1,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/classic-silver-anushka-sharma-ring",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Classic Silver Anushka Sharma Ring",
+                "price": 2499,
+                "rating": 4.8,
+                "relations": [
+                    "Her",
+                    "Soulmate"
+                ],
+                "stock": 15,
+                "quantity": 1
+            },
+            {
+                "category": "Personalised",
+                "description": "Customized 925 silver necklace with your name in cursive script.",
+                "id": 20,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/personalized-name-necklace",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Personalized Name Necklace",
+                "price": 2899,
+                "rating": 4.9,
+                "relations": [
+                    "Her",
+                    "Sister",
+                    "Bestie"
+                ],
+                "stock": 10,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "user_id": "user_123",
+        "items": [
+            {
+                "category": "Necklaces",
+                "description": "Intricate butterfly design dipped in premium rose gold.",
+                "id": 5,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/butterfly-rose-gold-pendant",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Butterfly Rose Gold Pendant",
+                "price": 2799,
+                "rating": 4.9,
+                "relations": [
+                    "Her",
+                    "Sister"
+                ],
+                "stock": 2,
+                "quantity": 2
+            },
+            {
+                "category": "Rings",
+                "description": "Exquisite 925 Silver ring for timeless elegance.",
+                "id": 1,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/classic-silver-anushka-sharma-ring",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Classic Silver Anushka Sharma Ring",
+                "price": 2499,
+                "rating": 4.8,
+                "relations": [
+                    "Her",
+                    "Soulmate"
+                ],
+                "stock": 15,
+                "quantity": 1
+            }
+        ]
+    }
+]

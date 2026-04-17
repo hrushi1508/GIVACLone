@@ -1,74 +1,363 @@
 [
-  {
-    "order_id": "GIVA-1001",
-    "user_id": "user_101",
-    "items": [
-      { "product_id": 1, "name": "Classic Silver Anushka Sharma Ring", "quantity": 1, "price": 2499 }
-    ],
-    "subtotal": 2499,
-    "discount": 250,
-    "promo_used": "GIVA10",
-    "total": 2249,
-    "status": "Delivered",
-    "payment_method": "UPI",
-    "date": "2026-03-28T10:30:00Z"
-  },
-  {
-    "order_id": "GIVA-1002",
-    "user_id": "user_103",
-    "items": [
-      { "product_id": 2, "name": "Rose Gold Dewdrop Earrings", "quantity": 2, "price": 1899 },
-      { "product_id": 3, "name": "Zircon Solitaire Necklace", "quantity": 1, "price": 3299 }
-    ],
-    "subtotal": 7097,
-    "discount": 500,
-    "promo_used": "WELCOME500",
-    "total": 6597,
-    "status": "Shipped",
-    "payment_method": "Credit Card",
-    "date": "2026-04-01T14:15:00Z"
-  },
-  {
-    "order_id": "GIVA-1003",
-    "user_id": "user_111",
-    "items": [
-      { "product_id": 4, "name": "Interlocked Heart Bracelet", "quantity": 1, "price": 2199 }
-    ],
-    "subtotal": 2199,
-    "discount": 0,
-    "promo_used": null,
-    "total": 2199,
-    "status": "Processing",
-    "payment_method": "COD",
-    "date": "2026-04-02T09:00:00Z"
-  },
-  {
-    "order_id": "GIVA-1004",
-    "user_id": "user_105",
-    "items": [
-      { "product_id": 1, "name": "Classic Silver Anushka Sharma Ring", "quantity": 1, "price": 2499 },
-      { "product_id": 4, "name": "Interlocked Heart Bracelet", "quantity": 1, "price": 2199 }
-    ],
-    "subtotal": 4698,
-    "discount": 939,
-    "promo_used": "FESTIVE20",
-    "total": 3759,
-    "status": "Placed",
-    "payment_method": "Net Banking",
-    "date": "2026-04-03T08:45:00Z"
-  },
-  {
-    "order_id": "GIVA-1005",
-    "user_id": "user_101",
-    "items": [
-      { "product_id": 3, "name": "Zircon Solitaire Necklace", "quantity": 1, "price": 3299 }
-    ],
-    "subtotal": 3299,
-    "discount": 330,
-    "promo_used": "GIVA10",
-    "total": 2969,
-    "status": "Cancelled",
-    "payment_method": "UPI",
-    "date": "2026-03-25T11:20:00Z"
-  }
+    {
+        "order_id": "GIVA-1001",
+        "user_id": "user_101",
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Classic Silver Anushka Sharma Ring",
+                "quantity": 1,
+                "price": 2499
+            }
+        ],
+        "subtotal": 2499,
+        "discount": 250,
+        "promo_used": "GIVA10",
+        "total": 2249,
+        "status": "Delivered",
+        "payment_method": "UPI",
+        "date": "2026-03-28T10:30:00Z"
+    },
+    {
+        "order_id": "GIVA-1002",
+        "user_id": "user_103",
+        "items": [
+            {
+                "product_id": 2,
+                "name": "Rose Gold Dewdrop Earrings",
+                "quantity": 2,
+                "price": 1899
+            },
+            {
+                "product_id": 3,
+                "name": "Zircon Solitaire Necklace",
+                "quantity": 1,
+                "price": 3299
+            }
+        ],
+        "subtotal": 7097,
+        "discount": 500,
+        "promo_used": "WELCOME500",
+        "total": 6597,
+        "status": "Shipped",
+        "payment_method": "Credit Card",
+        "date": "2026-04-01T14:15:00Z"
+    },
+    {
+        "order_id": "GIVA-1003",
+        "user_id": "user_111",
+        "items": [
+            {
+                "product_id": 4,
+                "name": "Interlocked Heart Bracelet",
+                "quantity": 1,
+                "price": 2199
+            }
+        ],
+        "subtotal": 2199,
+        "discount": 0,
+        "promo_used": null,
+        "total": 2199,
+        "status": "Processing",
+        "payment_method": "COD",
+        "date": "2026-04-02T09:00:00Z"
+    },
+    {
+        "order_id": "GIVA-1004",
+        "user_id": "user_105",
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Classic Silver Anushka Sharma Ring",
+                "quantity": 1,
+                "price": 2499
+            },
+            {
+                "product_id": 4,
+                "name": "Interlocked Heart Bracelet",
+                "quantity": 1,
+                "price": 2199
+            }
+        ],
+        "subtotal": 4698,
+        "discount": 939,
+        "promo_used": "FESTIVE20",
+        "total": 3759,
+        "status": "Placed",
+        "payment_method": "Net Banking",
+        "date": "2026-04-03T08:45:00Z"
+    },
+    {
+        "order_id": "GIVA-1005",
+        "user_id": "user_101",
+        "items": [
+            {
+                "product_id": 3,
+                "name": "Zircon Solitaire Necklace",
+                "quantity": 1,
+                "price": 3299
+            }
+        ],
+        "subtotal": 3299,
+        "discount": 330,
+        "promo_used": "GIVA10",
+        "total": 2969,
+        "status": "Cancelled",
+        "payment_method": "UPI",
+        "date": "2026-03-25T11:20:00Z"
+    },
+    {
+        "user_id": "user_123",
+        "items": [
+            {
+                "category": "Bracelets",
+                "description": "Symbolizing eternal love, crafted in rose gold.",
+                "id": 9,
+                "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80&w=800",
+                "name": "Interlocked Heart Bracelet",
+                "price": 2399,
+                "rating": 4.8,
+                "quantity": 1
+            },
+            {
+                "category": "Anklets",
+                "description": "Delicate anklet featuring tiny star charms.",
+                "id": 6,
+                "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&q=80&w=800",
+                "name": "Starry Night Silver Anklet",
+                "price": 1499,
+                "rating": 4.5,
+                "quantity": 1
+            }
+        ],
+        "billing": {
+            "subtotal": 3898,
+            "gst": 117,
+            "shipping": 0,
+            "discount": 0,
+            "total": 4015
+        },
+        "date": "2026-04-04T14:24:57.017Z",
+        "status": "Placed",
+        "order_id": "GIVA-1006"
+    },
+    {
+        "user_id": "user_126",
+        "items": [
+            {
+                "category": "Rings",
+                "description": "Exquisite 925 Silver ring for timeless elegance.",
+                "id": 1,
+                "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800",
+                "name": "Classic Silver Anushka Sharma Ring",
+                "price": 2499,
+                "rating": 4.8,
+                "quantity": 1
+            }
+        ],
+        "billing": {
+            "subtotal": 2499,
+            "gst": 75,
+            "shipping": 0,
+            "discount": 0,
+            "total": 2574
+        },
+        "date": "2026-04-09T15:24:01.582Z",
+        "status": "Placed",
+        "order_id": "GIVA-1007"
+    },
+    {
+        "user_id": "user_123",
+        "items": [
+            {
+                "category": "Anklets",
+                "description": "Vibrant turquoise stones on a silver-toned beaded chain.",
+                "id": 16,
+                "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800",
+                "name": "Bohemian Turquoise Anklet",
+                "price": 999,
+                "rating": 4.5,
+                "quantity": 1
+            },
+            {
+                "category": "Rings",
+                "description": "A bold emerald-cut stone set in high-polish silver.",
+                "id": 7,
+                "image": "https://images.unsplash.com/photo-1586104251397-695c90af3f71?auto=format&fit=crop&q=80&w=800",
+                "name": "Classic Emerald Cut Ring",
+                "price": 4599,
+                "rating": 4.9,
+                "quantity": 1
+            },
+            {
+                "category": "Mangalsutras",
+                "description": "22k gold plated mangalsutra with traditional black beads.",
+                "id": 15,
+                "image": "https://images.unsplash.com/photo-1626248801379-51a0748a5f96?auto=format&fit=crop&q=80&w=800",
+                "name": "Classic Gold Mangalsutra",
+                "price": 8999,
+                "rating": 4.9,
+                "quantity": 1
+            }
+        ],
+        "billing": {
+            "subtotal": 14597,
+            "gst": 438,
+            "shipping": 0,
+            "discount": 0,
+            "total": 15035
+        },
+        "date": "2026-04-10T09:41:27.766Z",
+        "status": "Placed",
+        "order_id": "GIVA-1008"
+    },
+    {
+        "user_id": "user_123",
+        "items": [
+            {
+                "category": "Rings",
+                "description": "Exquisite 925 Silver ring for timeless elegance.",
+                "id": 1,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/classic-silver-anushka-sharma-ring",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Classic Silver Anushka Sharma Ring",
+                "price": 2499,
+                "rating": 4.8,
+                "relations": [
+                    "Her",
+                    "Soulmate"
+                ],
+                "stock": 15,
+                "quantity": 2
+            },
+            {
+                "category": "Personalised",
+                "description": "Customized 925 silver necklace with your name in cursive script.",
+                "id": 20,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/personalized-name-necklace",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Personalized Name Necklace",
+                "price": 2899,
+                "rating": 4.9,
+                "relations": [
+                    "Her",
+                    "Sister",
+                    "Bestie"
+                ],
+                "stock": 10,
+                "quantity": 1
+            }
+        ],
+        "billing": {
+            "subtotal": 7897,
+            "gst": 237,
+            "shipping": 0,
+            "discount": 0,
+            "total": 8134
+        },
+        "date": "2026-04-10T10:47:32.149Z",
+        "status": "Placed",
+        "order_id": "GIVA-1009"
+    },
+    {
+        "user_id": "user_127",
+        "items": [
+            {
+                "category": "Rings",
+                "description": "Exquisite 925 Silver ring for timeless elegance.",
+                "id": 1,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/classic-silver-anushka-sharma-ring",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Classic Silver Anushka Sharma Ring",
+                "price": 2499,
+                "quantity": 1,
+                "rating": 4.8,
+                "relations": [
+                    "Her",
+                    "Soulmate"
+                ],
+                "stock": 15
+            },
+            {
+                "category": "Personalised",
+                "description": "Customized 925 silver necklace with your name in cursive script.",
+                "id": 20,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/personalized-name-necklace",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Personalized Name Necklace",
+                "price": 2899,
+                "quantity": 1,
+                "rating": 4.9,
+                "relations": [
+                    "Her",
+                    "Sister",
+                    "Bestie"
+                ],
+                "stock": 10
+            }
+        ],
+        "billing": {
+            "subtotal": 5398,
+            "gst": 162,
+            "shipping": 0,
+            "discount": 0,
+            "total": 5560
+        },
+        "date": "2026-04-10T10:54:04.452Z",
+        "status": "Placed",
+        "order_id": "GIVA-1010"
+    },
+    {
+        "user_id": "user_123",
+        "items": [
+            {
+                "category": "Necklaces",
+                "description": "Intricate butterfly design dipped in premium rose gold.",
+                "id": 5,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/butterfly-rose-gold-pendant",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Butterfly Rose Gold Pendant",
+                "price": 2799,
+                "quantity": 2,
+                "rating": 4.9,
+                "relations": [
+                    "Her",
+                    "Sister"
+                ],
+                "stock": 2
+            },
+            {
+                "category": "Rings",
+                "description": "Exquisite 925 Silver ring for timeless elegance.",
+                "id": 1,
+                "image": "https://res.cloudinary.com/demo/image/upload/q_auto,f_auto,w_800,h_800,c_fill/giva/products/classic-silver-anushka-sharma-ring",
+                "isNew": false,
+                "isTrending": true,
+                "name": "Classic Silver Anushka Sharma Ring",
+                "price": 2499,
+                "quantity": 1,
+                "rating": 4.8,
+                "relations": [
+                    "Her",
+                    "Soulmate"
+                ],
+                "stock": 15
+            }
+        ],
+        "billing": {
+            "subtotal": 8097,
+            "gst": 243,
+            "shipping": 0,
+            "discount": 0,
+            "total": 8340
+        },
+        "date": "2026-04-11T08:34:27.382Z",
+        "status": "Placed",
+        "order_id": "GIVA-1011"
+    }
 ]

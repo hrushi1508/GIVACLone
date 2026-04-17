@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { useCart } from '../store/useCart';
 import { X, Trash2, ShoppingBag, Truck, ShieldCheck } from 'lucide-react';
 import api from '../utils/api';
 import { useAuth } from '../store/useAuth'; // Added to get real user data
+import NotificationPopup from './NotificationPopup';
 
 export default function CartDrawer({ isOpen, onClose }) {
   const { cart, removeItem, clearCart } = useCart();
   const { user, isAuthenticated } = useAuth();
+  const [popup, setPopup] = useState({ isOpen: false, title: '', message: '', type: 'info' });
 
   // --- BILLING LOGIC ---
   const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
@@ -15,7 +18,12 @@ export default function CartDrawer({ isOpen, onClose }) {
 
   const handleCheckout = async () => {
     if (!isAuthenticated) {
-      alert("Please login to complete your purchase.");
+      setPopup({
+        isOpen: true,
+        title: 'Login Required',
+        message: 'Please login to complete your purchase and start your journey.',
+        type: 'info'
+      });
       return;
     }
 
@@ -34,11 +42,24 @@ export default function CartDrawer({ isOpen, onClose }) {
       };
       
       const response = await api.post('/checkout', order);
-      alert(`✨ Sparkle is on its way! Order ID: ${response.data.order_id}`);
-      clearCart();
-      onClose();
+      setPopup({
+        isOpen: true,
+        title: 'Sparkle on its way!',
+        message: `Order Placed Successfully! Order ID: ${response.data.order_id}`,
+        type: 'success',
+        onConfirm: () => {
+          clearCart();
+          onClose();
+        }
+      });
     } catch (err) {
-      alert("Checkout failed. Our goldsmiths are looking into it.");
+      console.error(err);
+      setPopup({
+        isOpen: true,
+        title: 'Something went wrong',
+        message: 'Checkout failed. Our goldsmiths are looking into it.',
+        type: 'error'
+      });
     }
   };
 
@@ -137,6 +158,11 @@ export default function CartDrawer({ isOpen, onClose }) {
           </button>
         </div>
       </div>
+
+      <NotificationPopup 
+        {...popup} 
+        onClose={() => setPopup({ ...popup, isOpen: false })} 
+      />
     </div>
   );
 }

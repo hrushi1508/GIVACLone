@@ -2,20 +2,42 @@ import { useCart } from '../store/useCart';
 import { useAuth } from '../store/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Plus, Minus, ShieldCheck, Truck, ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
 import api from '../utils/api';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ProductCard from '../components/ProductCard';
+import NotificationPopup from '../components/NotificationPopup';
+
 export default function CartPage() {
   const { cart, removeItem, updateQuantity, clearCart } = useCart();
   const { user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
+  const [popup, setPopup] = useState({ isOpen: false, title: '', message: '', type: 'info' });
+  const [recommendations, setRecommendations] = useState([]);
+  const [loadingRecommendations, setLoadingRecommendations] = useState(false);
 
   // --- BILLING LOGIC ---
   const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
   const gst = Math.round(subtotal * 0.03); 
   const shipping = subtotal > 999 || subtotal === 0 ? 0 : 99;
   const finalTotal = subtotal + gst + shipping - discount;
+
+  // --- FETCH RECOMMENDATIONS ---
+  useEffect(() => {
+    if (cart.length > 0) {
+      setLoadingRecommendations(true);
+      api.get('/products')
+        .then(res => {
+          const cartIds = cart.map(item => item.id);
+          const filtered = res.data.filter(p => !cartIds.includes(p.id)).slice(0, 4);
+          setRecommendations(filtered);
+          setLoadingRecommendations(false);
+        })
+        .catch(() => setLoadingRecommendations(false));
+    }
+  }, [cart]);
 
   // --- QUANTITY HANDLERS ---
   const incrementQty = (id, currentQty) => {
@@ -30,25 +52,17 @@ export default function CartPage() {
 
   // --- NEW REMOVE HANDLER (Backend Sync) ---
   const handleRemove = async (productId) => {
-    // 1. Immediate UI update
-    removeItem(productId);
-
-    // 2. Sync with Backend if logged in
-    if (isAuthenticated && user?.id) {
-      try {
-        await api.post('/cart/remove', {
-          user_id: user.id,
-          product_id: productId
-        });
-      } catch (err) {
-        console.error("Failed to sync removal with server:", err);
-      }
-    }
+    removeItem(productId, user?.id);
   };
 
   const handleCheckout = async () => {
     if (!isAuthenticated) {
-      alert("Please login to place your order.");
+      setPopup({
+        isOpen: true,
+        title: 'Authentication Required',
+        message: 'Please login to place your order and save your sparkle.',
+        type: 'info'
+      });
       return;
     }
 
@@ -62,11 +76,24 @@ export default function CartPage() {
       };
 
       const res = await api.post('/checkout', orderData);
-      alert(`✨ Sparkle is on its way! Order ID: ${res.data.order_id}`);
-      clearCart();
-      navigate('/profile'); 
+      setPopup({
+        isOpen: true,
+        title: 'Order Placed! ✨',
+        message: `Your sparkle is on its way! Order ID: ${res.data.order_id}. You can track it in your profile.`,
+        type: 'success',
+        onConfirm: () => {
+          clearCart();
+          navigate('/profile');
+        }
+      });
     } catch (err) {
-      alert("Checkout failed. Please try again.");
+      console.error(err);
+      setPopup({
+        isOpen: true,
+        title: 'Checkout Failed',
+        message: 'Something went wrong while processing your order. Please try again or contact support.',
+        type: 'error'
+      });
     }
   };
 
@@ -182,7 +209,7 @@ export default function CartPage() {
                 onChange={(e) => setPromoCode(e.target.value)}
               />
               <button 
-                onClick={() => promoCode === "GIVA10" ? setDiscount(Math.round(subtotal * 0.1)) : alert("Invalid Code")}
+                onClick={() => promoCode === "GIVA10" ? setDiscount(Math.round(subtotal * 0.1)) : setPopup({ isOpen: true, title: 'Invalid Code', message: 'The promo code you entered is invalid.', type: 'error' })}
                 className="text-[10px] font-bold text-giva-pink uppercase border-b border-giva-pink"
               >
                 Apply
@@ -217,6 +244,54 @@ export default function CartPage() {
           </div>
         </div>
       </div>
+
+      {/* Recommendations Section */}
+      {recommendations.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-20 border-t-2 border-gray-100 pt-16"
+        >
+          <div className="mb-12 text-center">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-giva-pink font-bold mb-3">
+              Complete Your Look
+            </p>
+            <h2 className="text-4xl font-serif font-bold text-giva-dark mb-4">
+              You Might Also Like
+            </h2>
+          </div>
+          
+          {loadingRecommendations ? (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="aspect-4/5 bg-giva-sand rounded-xl animate-pulse" />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+              {recommendations.map((product, idx) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <ProductCard
+                    product={product}
+                    onOpenModal={() => {}}
+                    onAuthRequired={() => {}}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </motion.div>
+      )}
+
+      <NotificationPopup 
+        {...popup} 
+        onClose={() => setPopup({ ...popup, isOpen: false })} 
+      />
     </div>
   );
 }

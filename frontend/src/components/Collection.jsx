@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
+import { getCategorySlug } from '../utils/category';
 
 export default function CollectionComponent() {
   const [categories, setCategories] = useState([]);
@@ -40,7 +41,7 @@ export default function CollectionComponent() {
             <motion.div
               key={category.id}
               whileHover={{ scale: 1.05 }}
-              onClick={() => navigate(`/search?q=${category.name}`)}
+              onClick={() => navigate(`/category/${getCategorySlug(category.name)}`)}
               className="flex-shrink-0 w-28 sm:w-32 flex flex-col items-center cursor-pointer snap-start group"
             >
               {/* Circular Frame - Forced to be a perfect circle with hidden overflow */}

@@ -14,6 +14,8 @@ import Profile from './pages/Profile';
 import CartPage from './pages/CartPage';
 import Wishlist from './pages/Wishlist';
 import SearchPage from './pages/SearchPage';
+import CategoryPage from './pages/CategoryPage';
+import ProductDetail from './pages/ProductDetail';
 
 // Components
 import LoginModal from './components/LoginModal';
@@ -26,7 +28,6 @@ function App() {
   // Get authentication state from our store
   const { isAuthenticated, user } = useAuth();
   const setCart = useCart((state) => state.setCart);
-  const setWishlist = useWishlist((state) => state.setWishlist);
 
   useEffect(() => {
     api.get('/layout')
@@ -41,20 +42,20 @@ function App() {
       cartApi.getCart(user.id)
         .then(res => setCart(res.data))
         .catch(err => console.error("Failed to load cart", err));
-
-      // 2. Fetch Wishlist from Flask
-      wishlistApi.getWishlist(user.id)
-        .then(res => setWishlist(res.data))
-        .catch(err => console.error("Failed to load wishlist", err));
         
     }
-  }, [isAuthenticated, user?.id, setCart, setWishlist]);
+  }, [isAuthenticated, user?.id, setCart]);
 
   // Helper component for protected routes to keep code clean
   const ProtectedRoute = ({ children }) => {
+    useEffect(() => {
+      if (!isAuthenticated) {
+        setIsLoginOpen(true);
+      }
+    }, []);
+
     if (!isAuthenticated) {
-      // If not logged in, redirect home and open login modal
-      useEffect(() => { setIsLoginOpen(true); }, []);
+      // If not logged in, redirect home
       return <Navigate to="/" replace />;
     }
     return children;
@@ -93,7 +94,7 @@ function App() {
             {/* PROTECTED ROUTES: Only accessible if isAuthenticated is true */}
             <Route 
               path="/cart" 
-              element={<ProtectedRoute><CartPage user={user} /></ProtectedRoute>} 
+              element={<ProtectedRoute><CartPage user={user} onAuthRequired={() => setIsLoginOpen(true)} /></ProtectedRoute>} 
             />
 
             <Route 
@@ -106,7 +107,9 @@ function App() {
               element={<ProtectedRoute><Wishlist user={user} /></ProtectedRoute>} 
             />
 
-            <Route path="/search" element={<SearchPage />} />
+            <Route path="/search" element={<SearchPage onAuthRequired={() => setIsLoginOpen(true)} />} />
+            <Route path="/category/:slug" element={<CategoryPage onAuthRequired={() => setIsLoginOpen(true)} />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
 
             {/* Fallback */}
             <Route path="*" element={<Navigate to="/" />} />
