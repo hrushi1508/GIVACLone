@@ -16,4 +16,3 @@ dist/
 build/
 .DS_Store
 *.log
-data/*.json
