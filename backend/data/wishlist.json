@@ -1,10 +1,10 @@
 [
-  {
-    "user_id": "user_admin001",
-    "products": []
-  },
-  {
-    "user_id": "user_demo0001",
-    "products": []
-  }
+    {
+        "user_id": "user_admin001",
+        "products": []
+    },
+    {
+        "user_id": "user_demo0001",
+        "products": []
+    }
 ]
