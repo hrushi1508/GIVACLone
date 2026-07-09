@@ -77,10 +77,16 @@ export default function Home({ layout, onAuthRequired }) {
 
   // --- Fetching Logic ---
   useEffect(() => {
-    api.get('/products').then(res => {
-      setProducts(res.data);
-      setLoading(false);
-    });
+    api.get('/products')
+      .then(res => {
+        setProducts(res.data);
+      })
+      .catch(err => {
+        console.error('Failed to load products:', err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const featuredProducts = products.slice(0, 8);
