@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Star, Heart, ShoppingBag, ArrowLeft, Share2, Shield, Truck, RotateCcw, AlertCircle } from 'lucide-react';
 import api from '../utils/api';
 import SafeImage from '../components/SafeImage';
+import ProductCard from '../components/ProductCard';
+import AddedToCartToast from '../components/AddedToCartToast';
 import { useAuth } from '../store/useAuth';
 import { useCart } from '../store/useCart';
 import { useWishlist } from '../store/useWishlist';
@@ -13,6 +15,7 @@ export default function ProductDetail() {
   const navigate = useNavigate();
   const { isAuthenticated, user } = useAuth();
   const { toggleWishlist, wishlist } = useWishlist();
+  const cart = useCart((state) => state.cart);
   const addToCart = useCart((state) => state.addToCart);
   
   const [product, setProduct] = useState(null);
@@ -22,32 +25,52 @@ export default function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedMaterial, setSelectedMaterial] = useState(null);
   const [mainImage, setMainImage] = useState(null);
+  const [showToast, setShowToast] = useState(false);
+  const [toastProduct, setToastProduct] = useState(null);
+  const [related, setRelated] = useState([]);
 
   useEffect(() => {
-    api.get('/products')
+    api.get(`/products/${id}`)
       .then(res => {
-        const found = res.data.find(p => p.id === parseInt(id));
-        if (found) {
-          setProduct(found);
-          setMainImage(found.image);
-        } else {
-          setError('Product not found');
-        }
+        const found = res.data;
+        setProduct(found);
+        setMainImage(found.image);
         setLoading(false);
+        // Fetch related products from the same category
+        if (found.category) {
+          api.get('/products', { params: { category: found.category } })
+            .then(r => {
+              setRelated(r.data.filter(p => p.id !== found.id).slice(0, 4));
+            })
+            .catch(() => {});
+        }
       })
       .catch(err => {
         console.error(err);
-        setError('Failed to load product');
+        setError(err.response?.data?.error || 'Failed to load product');
         setLoading(false);
       });
   }, [id]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (!isAuthenticated) {
       navigate('/');
       return;
     }
-    addToCart(product, quantity);
+
+    const existingItem = cart.find(item => item.id === product?.id);
+    const isAlreadyInBag = Boolean(existingItem);
+
+    await addToCart(product, user?.id);
+
+    setToastProduct({
+      ...product,
+      isAlreadyInBag,
+      count: existingItem ? existingItem.quantity + 1 : 1,
+      toastId: Date.now(),
+    });
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2600);
   };
 
   const handleWishlist = () => {
@@ -105,6 +128,11 @@ export default function ProductDetail() {
 
   return (
     <div className="min-h-screen bg-white pb-20">
+      <AddedToCartToast
+        isVisible={showToast}
+        product={toastProduct}
+        onClose={() => setShowToast(false)}
+      />
       {/* Navigation */}
       <div className="max-w-7xl mx-auto px-6 py-6">
         <motion.button
@@ -160,16 +188,17 @@ export default function ProductDetail() {
 
               {/* Rating */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1" aria-label={`Rating: ${rating} out of 5`}>
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
                       size={16}
+                      aria-hidden="true"
                       className={`${i < Math.floor(rating) ? 'fill-giva-gold text-giva-gold' : 'text-gray-200'}`}
                     />
                   ))}
                 </div>
-                <span className="text-sm text-gray-600">(245 reviews)</span>
+                <span className="text-sm text-gray-600">{rating.toFixed(1)} / 5.0</span>
               </div>
 
               {/* Price */}
@@ -231,17 +260,19 @@ export default function ProductDetail() {
 
             {/* Quantity */}
             <div className="mb-8 flex items-center gap-4">
-              <label className="text-sm font-semibold text-giva-dark">Quantity:</label>
+              <label className="text-sm font-semibold text-giva-dark" htmlFor="product-quantity">Quantity:</label>
               <div className="flex items-center border border-gray-300 rounded-lg">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  aria-label="Decrease quantity"
                   className="px-4 py-2 text-gray-600 hover:bg-gray-50 transition"
                 >
                   −
                 </button>
-                <span className="px-4 py-2 font-semibold text-giva-dark">{quantity}</span>
+                <span id="product-quantity" className="px-4 py-2 font-semibold text-giva-dark" aria-live="polite">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
+                  aria-label="Increase quantity"
                   className="px-4 py-2 text-gray-600 hover:bg-gray-50 transition"
                 >
                   +
@@ -284,48 +315,35 @@ export default function ProductDetail() {
         {/* Reviews Section */}
         <div className="mb-16">
           <h2 className="text-2xl font-serif font-bold text-giva-dark mb-8">Customer Reviews</h2>
-          <div className="space-y-6">
-            {[1, 2, 3].map(idx => (
-              <motion.div key={idx} className="border border-gray-100 rounded-lg p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <p className="font-semibold text-giva-dark">Customer {idx}</p>
-                    <div className="flex items-center gap-1 mt-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} className="fill-giva-gold text-giva-gold" />
-                      ))}
-                    </div>
-                  </div>
-                  <span className="text-xs text-gray-500">2 weeks ago</span>
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Beautiful piece! The quality is exceptional and the craftsmanship is evident. Highly recommend!
-                </p>
-              </motion.div>
-            ))}
+          <div className="text-center py-14 border border-gray-100 rounded-xl bg-giva-sand/20">
+            <Star size={36} className="mx-auto text-gray-200 mb-3" aria-hidden="true" />
+            <p className="text-gray-500 text-sm font-medium">No reviews yet.</p>
+            <p className="text-gray-400 text-xs mt-1">Be the first to review this product.</p>
           </div>
         </div>
 
         {/* Related Products */}
-        <div>
-          <h2 className="text-2xl font-serif font-bold text-giva-dark mb-8">You Might Also Like</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map(idx => (
-              <motion.div
-                key={idx}
-                whileHover={{ y: -4 }}
-                className="group cursor-pointer"
-              >
-                <div className="aspect-[4/5] bg-giva-sand rounded-lg overflow-hidden mb-3 group-hover:shadow-lg transition">
-                  <div className="w-full h-full bg-gradient-to-br from-giva-sand to-giva-pink/10" />
-                </div>
-                <p className="text-[10px] uppercase tracking-widest text-giva-pink font-bold mb-1">Similar Item</p>
-                <p className="font-semibold text-sm text-giva-dark">Related Product {idx}</p>
-                <p className="font-bold text-giva-dark mt-2">₹{(3000 + idx * 500).toLocaleString()}</p>
-              </motion.div>
-            ))}
+        {related.length > 0 && (
+          <div>
+            <h2 className="text-2xl font-serif font-bold text-giva-dark mb-8">You Might Also Like</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {related.map((item, idx) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.08 }}
+                >
+                  <ProductCard
+                    product={item}
+                    onOpenModal={() => {}}
+                    onAuthRequired={() => {}}
+                  />
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

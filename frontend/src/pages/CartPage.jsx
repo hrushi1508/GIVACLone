@@ -17,6 +17,8 @@ export default function CartPage() {
   const [popup, setPopup] = useState({ isOpen: false, title: '', message: '', type: 'info' });
   const [recommendations, setRecommendations] = useState([]);
   const [loadingRecommendations, setLoadingRecommendations] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [promoLoading, setPromoLoading] = useState(false);
 
   // --- BILLING LOGIC ---
   const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
@@ -55,6 +57,21 @@ export default function CartPage() {
     removeItem(productId, user?.id);
   };
 
+  const handleApplyPromo = async () => {
+    if (!promoCode.trim()) return;
+    setPromoLoading(true);
+    try {
+      const res = await api.post('/validate-promo', { code: promoCode, total: subtotal });
+      setDiscount(res.data.discount);
+      setPopup({ isOpen: true, title: 'Promo Applied!', message: `Discount of ₹${res.data.discount} applied.`, type: 'success' });
+    } catch (err) {
+      setDiscount(0);
+      setPopup({ isOpen: true, title: 'Invalid Code', message: err.response?.data?.error || 'The promo code is invalid or expired.', type: 'error' });
+    } finally {
+      setPromoLoading(false);
+    }
+  };
+
   const handleCheckout = async () => {
     if (!isAuthenticated) {
       setPopup({
@@ -66,6 +83,7 @@ export default function CartPage() {
       return;
     }
 
+    setCheckoutLoading(true);
     try {
       const orderData = {
         user_id: user.id,
@@ -76,24 +94,23 @@ export default function CartPage() {
       };
 
       const res = await api.post('/checkout', orderData);
+      clearCart();
       setPopup({
         isOpen: true,
-        title: 'Order Placed! ✨',
-        message: `Your sparkle is on its way! Order ID: ${res.data.order_id}. You can track it in your profile.`,
+        title: 'Order Placed!',
+        message: `Your sparkle is on its way! Order ID: ${res.data.order_id}. Track it in your profile.`,
         type: 'success',
-        onConfirm: () => {
-          clearCart();
-          navigate('/profile');
-        }
+        onConfirm: () => navigate('/profile')
       });
     } catch (err) {
-      console.error(err);
       setPopup({
         isOpen: true,
         title: 'Checkout Failed',
-        message: 'Something went wrong while processing your order. Please try again or contact support.',
+        message: err.response?.data?.error || 'Something went wrong. Please try again.',
         type: 'error'
       });
+    } finally {
+      setCheckoutLoading(false);
     }
   };
 
@@ -115,7 +132,7 @@ export default function CartPage() {
   return (
     <div className="max-w-7xl mx-auto py-16 px-6 lg:px-12">
       <div className="flex items-center gap-4 mb-12">
-        <Link to="/" className="text-gray-400 hover:text-giva-dark transition">
+        <Link to="/" aria-label="Back to home" className="text-gray-400 hover:text-giva-dark transition">
           <ArrowLeft size={20} />
         </Link>
         <h1 className="text-4xl font-serif">Shopping Bag</h1>
@@ -128,7 +145,7 @@ export default function CartPage() {
           {cart.map(item => (
             <div key={item.id} className="flex gap-6 border-b border-gray-100 pb-8 group">
               <div className="w-32 h-40 bg-giva-sand rounded-xl overflow-hidden flex-shrink-0">
-                <img src={item.image} className="w-full h-full object-cover mix-blend-multiply transition-transform group-hover:scale-105" />
+                <img src={item.image} alt={item.name} className="w-full h-full object-cover mix-blend-multiply transition-transform group-hover:scale-105" />
               </div>
               
               <div className="flex-1 flex flex-col justify-between py-2">
@@ -138,9 +155,9 @@ export default function CartPage() {
                     <p className="text-xs text-gray-400 uppercase tracking-widest mt-1">Product ID: {item.id}</p>
                   </div>
                   
-                  {/* FUNCTIONAL TRASH BUTTON */}
-                  <button 
-                    onClick={() => handleRemove(item.id)} 
+                  <button
+                    onClick={() => handleRemove(item.id)}
+                    aria-label={`Remove ${item.name} from cart`}
                     className="text-gray-300 hover:text-red-500 p-2 hover:bg-red-50 rounded-full transition-all duration-300"
                   >
                     <Trash2 size={20} />
@@ -149,16 +166,18 @@ export default function CartPage() {
 
                 <div className="flex justify-between items-end">
                   <div className="flex items-center border border-gray-200 rounded-full px-2 py-1 bg-white">
-                    <button 
-                      onClick={() => decrementQty(item.id, item.quantity)} 
+                    <button
+                      onClick={() => decrementQty(item.id, item.quantity)}
+                      aria-label={`Decrease quantity of ${item.name}`}
                       className={`p-1 transition-colors ${item.quantity > 1 ? 'hover:text-giva-pink text-giva-dark' : 'text-gray-300 cursor-not-allowed'}`}
                       disabled={item.quantity <= 1}
                     >
                       <Minus size={14} />
                     </button>
-                    <span className="w-10 text-center font-bold text-sm select-none">{item.quantity}</span>
-                    <button 
-                      onClick={() => incrementQty(item.id, item.quantity)} 
+                    <span className="w-10 text-center font-bold text-sm select-none" aria-live="polite" aria-label={`Quantity: ${item.quantity}`}>{item.quantity}</span>
+                    <button
+                      onClick={() => incrementQty(item.id, item.quantity)}
+                      aria-label={`Increase quantity of ${item.name}`}
                       className="p-1 hover:text-giva-pink text-giva-dark transition-colors"
                     >
                       <Plus size={14} />
@@ -208,11 +227,12 @@ export default function CartPage() {
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value)}
               />
-              <button 
-                onClick={() => promoCode === "GIVA10" ? setDiscount(Math.round(subtotal * 0.1)) : setPopup({ isOpen: true, title: 'Invalid Code', message: 'The promo code you entered is invalid.', type: 'error' })}
-                className="text-[10px] font-bold text-giva-pink uppercase border-b border-giva-pink"
+              <button
+                onClick={handleApplyPromo}
+                disabled={promoLoading || !promoCode.trim()}
+                className="text-[10px] font-bold text-giva-pink uppercase border-b border-giva-pink disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Apply
+                {promoLoading ? '...' : 'Apply'}
               </button>
             </div>
 
@@ -223,22 +243,24 @@ export default function CartPage() {
               </div>
             </div>
 
-            <button 
+            <button
               onClick={handleCheckout}
-              className="w-full bg-giva-dark text-white py-5 rounded-2xl uppercase text-xs font-bold tracking-[0.2em] hover:bg-black transition-all shadow-xl shadow-black/10"
+              disabled={checkoutLoading}
+              className="w-full bg-giva-dark text-white py-5 rounded-2xl uppercase text-xs font-bold tracking-[0.2em] hover:bg-black transition-all shadow-xl shadow-black/10 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              {isAuthenticated ? "Complete Order" : "Login to Checkout"}
+              {checkoutLoading && <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />}
+              {checkoutLoading ? 'Processing...' : isAuthenticated ? 'Complete Order' : 'Login to Checkout'}
             </button>
             
             {/* Trust Badges */}
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="flex flex-col items-center text-center p-3 bg-white/50 rounded-xl">
                 <Truck size={18} className="text-gray-400 mb-2" />
-                <p className="text-[8px] font-bold uppercase tracking-widest text-gray-500">Fast Delivery</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">Fast Delivery</p>
               </div>
               <div className="flex flex-col items-center text-center p-3 bg-white/50 rounded-xl">
                 <ShieldCheck size={18} className="text-gray-400 mb-2" />
-                <p className="text-[8px] font-bold uppercase tracking-widest text-gray-500">Authentic</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">Authentic</p>
               </div>
             </div>
           </div>

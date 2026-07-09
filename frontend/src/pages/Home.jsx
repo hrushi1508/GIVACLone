@@ -123,21 +123,24 @@ export default function Home({ layout, onAuthRequired }) {
         </motion.div>
       )}
 
-      {/* 3. HERO SECTION - Luxury & Premium */}
+      {/* 3. HERO SECTION - controlled by admin site settings */}
+      {layout?.hero?.enabled !== false && (
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
-          {/* Pink/Rose gradient background */}
+          {/* Gradient fallback */}
           <div className="absolute inset-0 bg-gradient-to-br from-giva-sand via-white to-giva-pink/10" />
-          
-          {/* Cloudinary Hero Image - Luxury jewelry showcase */}
-          <img 
-            src="https://res.cloudinary.com/dv32wfpfq/image/upload/q_auto,f_auto,w_1200,h_800,c_fill/giva/hero/luxury-jewelry-showcase"
-            alt="Luxury Jewelry Collection"
-            className="w-full h-full object-cover opacity-30"
-          />
-          
-          {/* Overlay for text readability */}
+
+          {/* Hero image from admin settings */}
+          {(layout?.hero?.image) && (
+            <img
+              src={layout.hero.image}
+              alt="Hero"
+              className="w-full h-full object-cover opacity-30"
+            />
+          )}
+
+          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-giva-pink/10" />
         </div>
 
@@ -209,6 +212,7 @@ export default function Home({ layout, onAuthRequired }) {
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* 4. TRUST BADGES */}
       <section className="bg-gradient-to-r from-giva-sand/30 to-giva-pink/10 border-y border-giva-sand/50">
@@ -276,6 +280,51 @@ export default function Home({ layout, onAuthRequired }) {
           ))}
         </div>
       </section>
+
+      {/* 4C. ADMIN-CONTROLLED CATEGORY SHOWCASE */}
+      {layout?.collectionsEnabled !== false && layout?.categories?.length > 0 && (
+        <section className="max-w-7xl mx-auto px-6 py-20 border-t border-giva-sand/50">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="text-[11px] uppercase tracking-[0.2em] text-giva-pink font-bold mb-3">
+              Shop by Category
+            </p>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-giva-dark mb-4">
+              Featured Collections
+            </h2>
+            <div className="w-20 h-1 bg-giva-gold mx-auto" />
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {layout.categories.map((cat, idx) => (
+              <motion.button
+                key={idx}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.07 }}
+                viewport={{ once: true }}
+                onClick={() => navigate(`/category/${encodeURIComponent(cat.name.toLowerCase())}`)}
+                className="group relative overflow-hidden rounded-2xl aspect-square bg-giva-sand hover:shadow-xl transition-all duration-300"
+              >
+                {cat.img && (
+                  <img
+                    src={cat.img}
+                    alt={cat.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-4 left-0 right-0 text-center text-white font-bold text-sm uppercase tracking-widest px-2">
+                  {cat.name}
+                </span>
+              </motion.button>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* 5. FEATURED COLLECTIONS */}
       <section className="max-w-7xl mx-auto px-6 py-20">

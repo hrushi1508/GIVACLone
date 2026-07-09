@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, ArrowRight, ShieldCheck, Truck, RefreshCw } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -84,8 +85,8 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">
           <p>© {currentYear} GIVA. MADE WITH LOVE IN INDIA.</p>
           <div className="flex gap-8">
-            <span className="hover:text-giva-pink cursor-pointer transition">Terms</span>
-            <span className="hover:text-giva-pink cursor-pointer transition">Privacy</span>
+            <Link to="/terms" className="hover:text-giva-pink transition">Terms</Link>
+            <Link to="/privacy" className="hover:text-giva-pink transition">Privacy</Link>
             <span className="hover:text-giva-pink cursor-pointer transition">Care</span>
           </div>
         </div>

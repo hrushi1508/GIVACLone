@@ -198,12 +198,22 @@ export default function Navbar({ onLoginClick }) {
                   }, 300); // 300ms delay
                 }}
               >
-                <button 
-                  onClick={() => navigate(`/category/${section.key}`)}
+                <button
+                  onClick={() => {
+                    setHoveredDropdown(hoveredDropdown === section.key ? null : section.key);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') {
+                      setHoveredDropdown(null);
+                      setHoveredItem(null);
+                    }
+                  }}
+                  aria-expanded={hoveredDropdown === section.key}
+                  aria-haspopup="true"
                   className="flex items-center gap-2 hover:text-giva-pink transition text-xs uppercase tracking-[0.2em] font-semibold"
                 >
                   <span>{section.title}</span>
-                  <ChevronDown size={14} className={`transition-transform ${hoveredDropdown === section.key ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={14} className={`transition-transform ${hoveredDropdown === section.key ? 'rotate-180' : ''}`} aria-hidden="true" />
                 </button>
                 
                 {hoveredDropdown === section.key && (
@@ -310,12 +320,13 @@ export default function Navbar({ onLoginClick }) {
           
           {/* Search Bar */}
           <div className="relative flex items-center bg-gray-100 px-4 py-2 rounded-full group focus-within:bg-gray-200 transition-colors">
-            <Search size={16} className="text-gray-400" />
-            <input 
+            <Search size={16} className="text-gray-400" aria-hidden="true" />
+            <input
               type="text"
               placeholder="Search Jewellery..."
+              aria-label="Search jewelry"
               value={searchInput}
-              className="bg-transparent border-none focus:ring-0 text-sm ml-2 w-32 lg:w-48 outline-none"
+              className="bg-transparent border-none focus:ring-0 text-sm ml-2 w-36 sm:w-40 lg:w-48 outline-none"
               onChange={(e) => setSearchInput(e.target.value)}
               onKeyDown={handleSearchInputKeyDown}
             />
@@ -337,12 +348,12 @@ export default function Navbar({ onLoginClick }) {
                   </div>
                 </Link>
 
-                <button 
+                <button
                   onClick={handleLogout}
-                  title="Logout"
+                  aria-label="Logout"
                   className="flex items-center gap-2 text-gray-400 hover:text-red-500 transition"
                 >
-                  <LogOut size={16} />
+                  <LogOut size={16} aria-hidden="true" />
                 </button>
               </div>
             ) : (
@@ -357,29 +368,32 @@ export default function Navbar({ onLoginClick }) {
           </div>
 
           {/* PRIVATE WISHLIST: Only shows count if authenticated */}
-          <button 
+          <button
             onClick={() => handleProtectedNavigation('/wishlist')}
+            aria-label={isAuthenticated && wishlistCount > 0 ? `Wishlist (${wishlistCount} items)` : 'Wishlist'}
             className="relative group p-1"
           >
-            <Heart 
-              size={20} 
-              className={`transition ${isAuthenticated && wishlistCount > 0 ? 'text-giva-pink fill-giva-pink' : 'group-hover:text-giva-pink text-gray-600'}`} 
+            <Heart
+              size={20}
+              aria-hidden="true"
+              className={`transition ${isAuthenticated && wishlistCount > 0 ? 'text-giva-pink fill-giva-pink' : 'group-hover:text-giva-pink text-gray-600'}`}
             />
             {isAuthenticated && wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-giva-pink text-white text-[8px] w-4 h-4 rounded-full flex items-center justify-center border-2 border-white animate-in zoom-in">
+              <span aria-hidden="true" className="absolute -top-1 -right-1 bg-giva-pink text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center border-2 border-white animate-in zoom-in">
                 {wishlistCount}
               </span>
             )}
           </button>
-          
+
           {/* PRIVATE SHOPPING BAG: Isolated count for current token only */}
-          <button 
+          <button
             className="relative cursor-pointer group p-1"
             onClick={() => handleProtectedNavigation('/cart')}
+            aria-label={isAuthenticated && cartCount > 0 ? `Shopping bag (${cartCount} items)` : 'Shopping bag'}
           >
-            <ShoppingBag size={20} className="group-hover:text-giva-pink transition text-gray-600" />
+            <ShoppingBag size={20} aria-hidden="true" className="group-hover:text-giva-pink transition text-gray-600" />
             {isAuthenticated && cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-giva-pink text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center border-2 border-white animate-in zoom-in">
+              <span aria-hidden="true" className="absolute -top-1 -right-1 bg-giva-pink text-white text-[10px] w-4.5 h-4.5 rounded-full flex items-center justify-center border-2 border-white animate-in zoom-in">
                 {cartCount}
               </span>
             )}

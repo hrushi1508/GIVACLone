@@ -1,14 +1,26 @@
 # Web Framework
-Flask==3.0.2
+Flask==3.0.0
 
 # Cross-Origin Resource Sharing (Essential for React to talk to Flask)
 Flask-CORS==4.0.0
 
+# Rate limiting (brute-force protection on auth endpoints)
+Flask-Limiter==4.1.1
+
+# JWT authentication
+PyJWT==2.8.0
+
+# Cloudinary media storage
+cloudinary==1.44.2
+
 # Utility for environment variables (optional but recommended)
-python-dotenv==1.0.1
+python-dotenv==1.0.0
 
 # HTTP Request handling (if your backend calls external APIs)
-requests==2.31.0
+requests==2.32.5
+
+# Password hashing
+Werkzeug==3.0.1
 
 # WSGI Server for production-like local testing
 gunicorn==21.2.0

@@ -5,7 +5,7 @@ import { useWishlist } from './useWishlist';
 
 export const useAuth = create(
   persist(
-    (set) => ({
+    (set, get) => ({
       user: null,
       token: null, // New: Store the JWT from Flask
       isAuthenticated: false,
@@ -16,6 +16,12 @@ export const useAuth = create(
         token: token,
         isAuthenticated: true 
       }),
+
+      // Computed: check if current user is admin
+      get isAdmin() {
+        const state = get();
+        return state.user?.is_admin === true;
+      },
 
       logout: () => {
         // 1. Reset Auth & Token State

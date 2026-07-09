@@ -1,314 +1,1505 @@
 [
-  {
-    "id": 1,
-    "name": "Classic Silver Anushka Sharma Ring",
-    "price": 2499,
-    "category": "Rings",
-    "image": "giva/products/classic-silver-anushka-sharma-ring",
-    "rating": 4.8,
-    "description": "Exquisite 925 Silver ring for timeless elegance.",
-    "isTrending": true,
-    "isNew": false,
-    "stock": 15,
-    "relations": ["Her", "Soulmate"]
-  },
-  {
-    "id": 2,
-    "name": "Rose Gold Dewdrop Earrings",
-    "price": 1899,
-    "category": "Earrings",
-    "image": "giva/products/rose-gold-dewdrop-earrings",
-    "rating": 4.9,
-    "description": "Premium rose gold plating with zircon stones.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 4,
-    "relations": ["Sister", "Bestie"]
-  },
-  {
-    "id": 3,
-    "name": "Zircon Studded Solitaire Necklace",
-    "price": 3299,
-    "category": "Necklaces",
-    "image": "giva/products/zircon-studded-solitaire-necklace",
-    "rating": 4.7,
-    "description": "A stunning centerpiece with brilliant-cut Zircon stones.",
-    "isTrending": true,
-    "isNew": false,
-    "stock": 25,
-    "relations": ["Her", "Mom"]
-  },
-  {
-    "id": 4,
-    "name": "Minimalist Silver Adjustable Bracelet",
-    "price": 2199,
-    "category": "Bracelets",
-    "image": "giva/products/minimalist-silver-adjustable-bracelet",
-    "rating": 4.6,
-    "description": "Adjustable 925 silver bracelet for a perfect fit.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 30,
-    "relations": ["Bestie"]
-  },
-  {
-    "id": 5,
-    "name": "Butterfly Rose Gold Pendant",
-    "price": 2799,
-    "category": "Necklaces",
-    "image": "giva/products/butterfly-rose-gold-pendant",
-    "rating": 4.9,
-    "description": "Intricate butterfly design dipped in premium rose gold.",
-    "isTrending": true,
-    "isNew": false,
-    "stock": 2,
-    "relations": ["Her", "Sister"]
-  },
-  {
-    "id": 6,
-    "name": "Starry Night Silver Anklet",
-    "price": 1499,
-    "category": "Anklets",
-    "image": "giva/products/starry-night-silver-anklet",
-    "rating": 4.5,
-    "description": "Delicate anklet featuring tiny star charms.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 45,
-    "relations": ["Bestie"]
-  },
-  {
-    "id": 7,
-    "name": "Classic Emerald Cut Ring",
-    "price": 4599,
-    "category": "Rings",
-    "image": "giva/products/classic-emerald-cut-ring",
-    "rating": 4.9,
-    "description": "A bold emerald-cut stone set in high-polish silver.",
-    "isTrending": false,
-    "isNew": true,
-    "stock": 10,
-    "relations": ["Her"]
-  },
-  {
-    "id": 8,
-    "name": "Pear-Drop Silver Earrings",
-    "price": 1699,
-    "category": "Earrings",
-    "image": "giva/products/pear-drop-silver-earrings",
-    "rating": 4.7,
-    "description": "Timeless pear-shaped drops for evening wear.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 3,
-    "relations": ["Mom", "Sister"]
-  },
-  {
-    "id": 9,
-    "name": "Interlocked Heart Bracelet",
-    "price": 2399,
-    "category": "Bracelets",
-    "image": "giva/products/interlocked-heart-bracelet",
-    "rating": 4.8,
-    "description": "Symbolizing eternal love, crafted in rose gold.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 12,
-    "relations": ["Soulmate", "Her"]
-  },
-  {
-    "id": 10,
-    "name": "Elegant Floral Silver Nose Pin",
-    "price": 799,
-    "category": "Nose Pins",
-    "image": "giva/products/elegant-floral-silver-nose-pin",
-    "rating": 4.4,
-    "description": "Simple yet traditional silver floral nose stud.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 50,
-    "relations": ["Sister"]
-  },
-  {
-    "id": 11,
-    "name": "Gold Plated Hoop Earrings",
-    "price": 1299,
-    "category": "Earrings",
-    "image": "giva/products/gold-plated-hoop-earrings",
-    "rating": 4.6,
-    "description": "Classic hoops with a modern 18k gold plated finish.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 20,
-    "relations": ["Bestie", "Her"]
-  },
-  {
-    "id": 12,
-    "name": "Vintage Pearl Necklace",
-    "price": 5499,
-    "category": "Necklaces",
-    "image": "giva/products/vintage-pearl-necklace",
-    "rating": 5.0,
-    "description": "Natural freshwater pearls with a silver clasp.",
-    "isTrending": false,
-    "isNew": true,
-    "stock": 4,
-    "relations": ["Mom", "Her"]
-  },
-  {
-    "id": 13,
-    "name": "Men's Black Onyx Ring",
-    "price": 3199,
-    "category": "Men's Jewelry",
-    "image": "giva/products/mens-black-onyx-ring",
-    "rating": 4.7,
-    "description": "Bold black onyx stone set in a textured silver band.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 15,
-    "relations": ["Him", "Brother"]
-  },
-  {
-    "id": 14,
-    "name": "Oxidised Silver Jhumkas",
-    "price": 1299,
-    "category": "Earrings",
-    "image": "giva/products/oxidised-silver-jhumkas",
-    "rating": 4.8,
-    "description": "Traditional handcrafted jhumkas with intricate tribal patterns.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 5,
-    "relations": ["Mom", "Sister"]
-  },
-  {
-    "id": 15,
-    "name": "Classic Gold Mangalsutra",
-    "price": 8999,
-    "category": "Mangalsutras",
-    "image": "giva/products/classic-gold-mangalsutra",
-    "rating": 4.9,
-    "description": "22k gold plated mangalsutra with traditional black beads.",
-    "isTrending": true,
-    "isNew": false,
-    "stock": 8,
-    "relations": ["Her", "Soulmate"]
-  },
-  {
-    "id": 16,
-    "name": "Bohemian Turquoise Anklet",
-    "price": 999,
-    "category": "Anklets",
-    "image": "giva/products/bohemian-turquoise-anklet",
-    "rating": 4.5,
-    "description": "Vibrant turquoise stones on a silver-toned beaded chain.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 40,
-    "relations": ["Bestie"]
-  },
-  {
-    "id": 17,
-    "name": "Infinity Symbol Bracelet",
-    "price": 1999,
-    "category": "Bracelets",
-    "image": "giva/products/infinity-symbol-bracelet",
-    "rating": 4.7,
-    "description": "Minimalist infinity charm on a delicate rose gold link chain.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 22,
-    "relations": ["Bestie", "Sister"]
-  },
-  {
-    "id": 18,
-    "name": "Dainty Leaf Toe Rings",
-    "price": 699,
-    "category": "Toe Rings",
-    "image": "giva/products/dainty-leaf-toe-rings",
-    "rating": 4.4,
-    "description": "Adjustable silver toe rings with a nature-inspired leaf motif.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 35,
-    "relations": ["Her"]
-  },
-  {
-    "id": 19,
-    "name": "Royal Temple Choker Set",
-    "price": 12499,
-    "category": "Sets",
-    "image": "giva/products/royal-temple-choker-set",
-    "rating": 5.0,
-    "description": "Ornate temple jewelry set featuring Goddess Lakshmi motifs.",
-    "isTrending": false,
-    "isNew": true,
-    "stock": 2,
-    "relations": ["Mom", "Her"]
-  },
-  {
-    "id": 20,
-    "name": "Personalized Name Necklace",
-    "price": 2899,
-    "category": "Personalised",
-    "image": "giva/products/personalized-name-necklace",
-    "rating": 4.9,
-    "description": "Customized 925 silver necklace with your name in cursive script.",
-    "isTrending": true,
-    "isNew": false,
-    "stock": 10,
-    "relations": ["Her", "Sister", "Bestie"]
-  },
-  {
-    "id": 21,
-    "name": "Rose Gold Chronograph Watch",
-    "price": 6499,
-    "category": "Watches",
-    "image": "giva/products/rose-gold-chronograph-watch",
-    "rating": 4.8,
-    "description": "Luxurious metal strap watch with a crystal-studded dial.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 6,
-    "relations": ["Him", "Brother"]
-  },
-  {
-    "id": 22,
-    "name": "Solitaire Diamond Studs",
-    "price": 15999,
-    "category": "Earrings",
-    "image": "giva/products/solitaire-diamond-studs",
-    "rating": 4.9,
-    "description": "Certified lab-grown diamond studs in a 14k white gold setting.",
-    "isTrending": true,
-    "isNew": false,
-    "stock": 5,
-    "relations": ["Her", "Mom"]
-  },
-  {
-    "id": 23,
-    "name": "Sleek Silver Curb Chain",
-    "price": 2599,
-    "category": "Silver Chains",
-    "image": "giva/products/sleek-silver-curb-chain",
-    "rating": 4.6,
-    "description": "High-shine 925 silver curb chain for daily wear.",
-    "isTrending": false,
-    "isNew": false,
-    "stock": 30,
-    "relations": ["Him"]
-  },
-  {
-    "id": 24,
-    "name": "Ethereal Moonstone Ring",
-    "price": 3499,
-    "category": "Rings",
-    "image": "giva/products/ethereal-moonstone-ring",
-    "rating": 4.7,
-    "description": "Iridescent moonstone set in a crown-style silver band.",
-    "isTrending": false,
-    "isNew": true,
-    "stock": 12,
-    "relations": ["Her", "Sister"]
-  }
+    {
+        "id": 1,
+        "name": "Classic Silver Anushka Sharma Ring",
+        "price": 2499,
+        "category": "Rings",
+        "image": "giva/products/classic-silver-anushka-sharma-ring",
+        "rating": 4.8,
+        "description": "Exquisite 925 Silver ring for timeless elegance.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 14,
+        "relations": [
+            "Her",
+            "Soulmate"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Zircon Studded Solitaire Necklace",
+        "price": 3299,
+        "category": "Necklaces",
+        "image": "giva/products/zircon-studded-solitaire-necklace",
+        "rating": 4.7,
+        "description": "A stunning centerpiece with brilliant-cut Zircon stones.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 25,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Minimalist Silver Adjustable Bracelet",
+        "price": 2199,
+        "category": "Bracelets",
+        "image": "giva/products/minimalist-silver-adjustable-bracelet",
+        "rating": 4.6,
+        "description": "Adjustable 925 silver bracelet for a perfect fit.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 30,
+        "relations": [
+            "Bestie"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Butterfly Rose Gold Pendant",
+        "price": 2799,
+        "category": "Necklaces",
+        "image": "giva/products/butterfly-rose-gold-pendant",
+        "rating": 4.9,
+        "description": "Intricate butterfly design dipped in premium rose gold.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 2,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Starry Night Silver Anklet",
+        "price": 1499,
+        "category": "Anklets",
+        "image": "giva/products/starry-night-silver-anklet",
+        "rating": 4.5,
+        "description": "Delicate anklet featuring tiny star charms.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 45,
+        "relations": [
+            "Bestie"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Classic Emerald Cut Ring",
+        "price": 4599,
+        "category": "Rings",
+        "image": "giva/products/classic-emerald-cut-ring",
+        "rating": 4.9,
+        "description": "A bold emerald-cut stone set in high-polish silver.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 10,
+        "relations": [
+            "Her"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Interlocked Heart Bracelet",
+        "price": 2399,
+        "category": "Bracelets",
+        "image": "giva/products/interlocked-heart-bracelet",
+        "rating": 4.8,
+        "description": "Symbolizing eternal love, crafted in rose gold.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 12,
+        "relations": [
+            "Soulmate",
+            "Her"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Elegant Floral Silver Nose Pin",
+        "price": 799,
+        "category": "Nose Pins",
+        "image": "giva/products/elegant-floral-silver-nose-pin",
+        "rating": 4.4,
+        "description": "Simple yet traditional silver floral nose stud.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 50,
+        "relations": [
+            "Sister"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Vintage Pearl Necklace",
+        "price": 5499,
+        "category": "Necklaces",
+        "image": "giva/products/vintage-pearl-necklace",
+        "rating": 5.0,
+        "description": "Natural freshwater pearls with a silver clasp.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 4,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Men's Black Onyx Ring",
+        "price": 3199,
+        "category": "Men's Jewelry",
+        "image": "giva/products/mens-black-onyx-ring",
+        "rating": 4.7,
+        "description": "Bold black onyx stone set in a textured silver band.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 15,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Oxidised Silver Jhumkas",
+        "price": 1299,
+        "category": "Earrings",
+        "image": "giva/products/oxidised-silver-jhumkas",
+        "rating": 4.8,
+        "description": "Traditional handcrafted jhumkas with intricate tribal patterns.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 5,
+        "relations": [
+            "Mom",
+            "Sister"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Classic Gold Mangalsutra",
+        "price": 8999,
+        "category": "Mangalsutras",
+        "image": "giva/products/classic-gold-mangalsutra",
+        "rating": 4.9,
+        "description": "22k gold plated mangalsutra with traditional black beads.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 8,
+        "relations": [
+            "Her",
+            "Soulmate"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Bohemian Turquoise Anklet",
+        "price": 999,
+        "category": "Anklets",
+        "image": "giva/products/bohemian-turquoise-anklet",
+        "rating": 4.5,
+        "description": "Vibrant turquoise stones on a silver-toned beaded chain.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 40,
+        "relations": [
+            "Bestie"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Infinity Symbol Bracelet",
+        "price": 1999,
+        "category": "Bracelets",
+        "image": "giva/products/infinity-symbol-bracelet",
+        "rating": 4.7,
+        "description": "Minimalist infinity charm on a delicate rose gold link chain.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 22,
+        "relations": [
+            "Bestie",
+            "Sister"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Dainty Leaf Toe Rings",
+        "price": 699,
+        "category": "Toe Rings",
+        "image": "giva/products/dainty-leaf-toe-rings",
+        "rating": 4.4,
+        "description": "Adjustable silver toe rings with a nature-inspired leaf motif.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 35,
+        "relations": [
+            "Her"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Royal Temple Choker Set",
+        "price": 12499,
+        "category": "Sets",
+        "image": "giva/products/royal-temple-choker-set",
+        "rating": 5.0,
+        "description": "Ornate temple jewelry set featuring Goddess Lakshmi motifs.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 2,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Personalized Name Necklace",
+        "price": 2899,
+        "category": "Personalised",
+        "image": "giva/products/personalized-name-necklace",
+        "rating": 4.9,
+        "description": "Customized 925 silver necklace with your name in cursive script.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 10,
+        "relations": [
+            "Her",
+            "Sister",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Rose Gold Chronograph Watch",
+        "price": 6499,
+        "category": "Watches",
+        "image": "giva/products/rose-gold-chronograph-watch",
+        "rating": 4.8,
+        "description": "Luxurious metal strap watch with a crystal-studded dial.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 6,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Sleek Silver Curb Chain",
+        "price": 2599,
+        "category": "Silver Chains",
+        "image": "giva/products/sleek-silver-curb-chain",
+        "rating": 4.6,
+        "description": "High-shine 925 silver curb chain for daily wear.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 30,
+        "relations": [
+            "Him"
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Ethereal Moonstone Ring",
+        "price": 3499,
+        "category": "Rings",
+        "image": "giva/products/ethereal-moonstone-ring",
+        "rating": 4.7,
+        "description": "Iridescent moonstone set in a crown-style silver band.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 12,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Golden Bangle Set (2 Pieces)",
+        "price": 7999,
+        "category": "Bangles",
+        "image": "giva/products/golden-bangle-set",
+        "rating": 4.8,
+        "description": "Stunning 22k gold-plated bangle pair with intricate engravings.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 18,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Men's Silver Pendant Necklace",
+        "price": 2999,
+        "category": "Silver Chains",
+        "image": "giva/products/mens-silver-pendant",
+        "rating": 4.6,
+        "description": "Masculine pendant with geometric design on a sturdy silver chain.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 14,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Coral Pearl Bracelet",
+        "price": 3899,
+        "category": "Bracelets",
+        "image": "giva/products/coral-pearl-bracelet",
+        "rating": 4.9,
+        "description": "Freshwater coral pearls with sterling silver spacers.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 8,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Kids Rainbow Crystal Ring",
+        "price": 599,
+        "category": "Kids Jewelry",
+        "image": "giva/products/kids-rainbow-crystal-ring",
+        "rating": 4.7,
+        "description": "Fun multicolored crystal ring, adjustable for growing hands.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 50,
+        "relations": [
+            "Kids"
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Mystical Evil Eye Pendant",
+        "price": 1499,
+        "category": "Pendants",
+        "image": "giva/products/mystical-evil-eye-pendant",
+        "rating": 4.8,
+        "description": "Traditional evil eye pendant with enamel work in a protection motif.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 28,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Luxury Analog Silver Watch",
+        "price": 8999,
+        "category": "Watches",
+        "image": "giva/products/luxury-analog-watch",
+        "rating": 4.9,
+        "description": "Premium stainless steel watch with sapphire crystal and leather strap.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 4,
+        "relations": [
+            "Him"
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Ornate Silver Nose Pin Pair",
+        "price": 1299,
+        "category": "Nose Pins",
+        "image": "giva/products/ornate-silver-nose-pin-pair",
+        "rating": 4.5,
+        "description": "Traditional pair of ornate silver nose pins with pearl centers.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 45,
+        "relations": [
+            "Sister",
+            "Mom"
+        ]
+    },
+    {
+        "id": 32,
+        "name": "Festive Peacock Earrings",
+        "price": 2199,
+        "category": "Earrings",
+        "image": "giva/products/festive-peacock-earrings",
+        "rating": 4.7,
+        "description": "Iconic peacock design with colorful enamel work, perfect for celebrations.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 16,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 33,
+        "name": "Delicate Layered Necklace",
+        "price": 4899,
+        "category": "Necklaces",
+        "image": "giva/products/delicate-layered-necklace",
+        "rating": 4.8,
+        "description": "Three-layer rose gold necklace with different pendant heights.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 11,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 34,
+        "name": "Men's Leather Bracelet",
+        "price": 1799,
+        "category": "Bracelets",
+        "image": "giva/products/mens-leather-bracelet",
+        "rating": 4.6,
+        "description": "Black leather with silver metal beads, rugged and stylish.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 25,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Minimalist Bar Pendant",
+        "price": 1999,
+        "category": "Pendants",
+        "image": "giva/products/minimalist-bar-pendant",
+        "rating": 4.7,
+        "description": "Sleek engraved silver bar pendant on a modern chain.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 33,
+        "relations": [
+            "Her",
+            "Brother"
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Premium Gold Coin Set",
+        "price": 24999,
+        "category": "Coins",
+        "image": "giva/products/premium-gold-coin-set",
+        "rating": 5.0,
+        "description": "Exclusive set of 5 certified gold coins in elegant box packaging.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 3,
+        "relations": [
+            "Him",
+            "Her"
+        ]
+    },
+    {
+        "id": 37,
+        "name": "Floral Filigree Bracelet",
+        "price": 2699,
+        "category": "Bracelets",
+        "image": "giva/products/floral-filigree-bracelet",
+        "rating": 4.8,
+        "description": "Intricate floral filigree patterns in 925 silver, hinged bangle style.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 19,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 38,
+        "name": "Personalized Engraved Bracelet",
+        "price": 2499,
+        "category": "Personalised",
+        "image": "giva/products/personalized-engraved-bracelet",
+        "rating": 4.9,
+        "description": "Custom name or message engraving on a sleek silver link bracelet.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 20,
+        "relations": [
+            "Bestie",
+            "Sister"
+        ]
+    },
+    {
+        "id": 39,
+        "name": "Bohemian Dream Catcher Earrings",
+        "price": 1599,
+        "category": "Earrings",
+        "image": "giva/products/dream-catcher-earrings",
+        "rating": 4.6,
+        "description": "Boho chic dream catcher dangling earrings with stone accents.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 24,
+        "relations": [
+            "Bestie",
+            "Her"
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Silver Temple Necklace",
+        "price": 6999,
+        "category": "Necklaces",
+        "image": "giva/products/silver-temple-necklace",
+        "rating": 4.9,
+        "description": "Traditional temple jewelry with intricate filigree and Lakshmi pendant.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 9,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 42,
+        "name": "Diamond Cut Crystal Ring",
+        "price": 3299,
+        "category": "Rings",
+        "image": "giva/products/diamond-cut-crystal-ring",
+        "rating": 4.7,
+        "description": "Faceted crystal with diamond-like sparkle on a silver band.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 22,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 43,
+        "name": "Statement Gold Choker",
+        "price": 9999,
+        "category": "Necklaces",
+        "image": "giva/products/statement-gold-choker",
+        "rating": 4.8,
+        "description": "Bold 22k gold-plated choker necklace for formal occasions.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 5,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 44,
+        "name": "Men's Stainless Steel Bracelet",
+        "price": 2299,
+        "category": "Bracelets",
+        "image": "giva/products/mens-steel-bracelet",
+        "rating": 4.5,
+        "description": "Sleek stainless steel bracelet with minimalist design.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 28,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 45,
+        "name": "Rose Quartz Heart Pendant",
+        "price": 2099,
+        "category": "Pendants",
+        "image": "giva/products/rose-quartz-heart-pendant",
+        "rating": 4.9,
+        "description": "Healing rose quartz heart on a delicate silver chain.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 14,
+        "relations": [
+            "Her",
+            "Sister",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 46,
+        "name": "Kundan Studded Bracelet",
+        "price": 4599,
+        "category": "Bracelets",
+        "image": "giva/products/kundan-bracelet",
+        "rating": 4.8,
+        "description": "Traditional kundan work with colorful gemstones.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 11,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 47,
+        "name": "Simple Silver Band Ring",
+        "price": 1199,
+        "category": "Rings",
+        "image": "giva/products/simple-silver-band",
+        "rating": 4.4,
+        "description": "Minimalist polished silver band, perfect for everyday wear.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 60,
+        "relations": [
+            "Her",
+            "Him"
+        ]
+    },
+    {
+        "id": 49,
+        "name": "Silver Feather Pendant",
+        "price": 1399,
+        "category": "Pendants",
+        "image": "giva/products/silver-feather-pendant",
+        "rating": 4.6,
+        "description": "Delicate feather design symbolizing freedom and grace.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 26,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 50,
+        "name": "Coral Beaded Necklace",
+        "price": 2999,
+        "category": "Necklaces",
+        "image": "giva/products/coral-beaded-necklace",
+        "rating": 4.5,
+        "description": "Natural coral beads on a traditional string with silver clasp.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 19,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 51,
+        "name": "Black Onyx Toe Ring",
+        "price": 599,
+        "category": "Toe Rings",
+        "image": "giva/products/black-onyx-toe-ring",
+        "rating": 4.3,
+        "description": "Sleek black onyx stone with adjustable silver band.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 42,
+        "relations": [
+            "Her"
+        ]
+    },
+    {
+        "id": 52,
+        "name": "Premium Gold Chain",
+        "price": 7999,
+        "category": "Silver Chains",
+        "image": "giva/products/premium-gold-chain",
+        "rating": 4.8,
+        "description": "24k gold-plated long chain for layering or solo wear.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 13,
+        "relations": [
+            "Her",
+            "Him"
+        ]
+    },
+    {
+        "id": 53,
+        "name": "Pearl Nose Pin",
+        "price": 699,
+        "category": "Nose Pins",
+        "image": "giva/products/pearl-nose-pin",
+        "rating": 4.4,
+        "description": "Classic pearl-centered nose pin with silver backing.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 55,
+        "relations": [
+            "Sister"
+        ]
+    },
+    {
+        "id": 54,
+        "name": "Classy Bangle Pair",
+        "price": 5999,
+        "category": "Bangles",
+        "image": "giva/products/classy-bangle-pair",
+        "rating": 4.7,
+        "description": "Matching pair of lightweight 925 silver bangles.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 20,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 55,
+        "name": "Kids Silver Bell Bracelet",
+        "price": 799,
+        "category": "Kids Jewelry",
+        "image": "giva/products/kids-bell-bracelet",
+        "rating": 4.6,
+        "description": "Cute silver bracelet with jingling bells for kids.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 48,
+        "relations": [
+            "Kids"
+        ]
+    },
+    {
+        "id": 56,
+        "name": "Traditional Mangalsutra with Beads",
+        "price": 7499,
+        "category": "Mangalsutras",
+        "image": "giva/products/traditional-mangalsutra-beads",
+        "rating": 4.9,
+        "description": "Classic mangalsutra with marathi beads and gold plating.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 7,
+        "relations": [
+            "Her",
+            "Soulmate"
+        ]
+    },
+    {
+        "id": 57,
+        "name": "Moonstone Bracelet",
+        "price": 3199,
+        "category": "Bracelets",
+        "image": "giva/products/moonstone-bracelet",
+        "rating": 4.8,
+        "description": "Iridescent moonstone beads on an elastic silver band.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 17,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 58,
+        "name": "Turquoise Gemstone Necklace",
+        "price": 4299,
+        "category": "Necklaces",
+        "image": "giva/products/turquoise-gemstone-necklace",
+        "rating": 4.7,
+        "description": "Vibrant turquoise stone with intricate silver work.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 12,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 59,
+        "name": "Men's Gold Link Chain",
+        "price": 5999,
+        "category": "Silver Chains",
+        "image": "giva/products/mens-gold-link-chain",
+        "rating": 4.6,
+        "description": "Masculine gold-plated link chain with sturdy clasp.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 15,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 60,
+        "name": "Personalized Couples Ring Set",
+        "price": 4999,
+        "category": "Personalised",
+        "image": "giva/products/couples-ring-set",
+        "rating": 4.9,
+        "description": "Custom engraved matching ring set for couples.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 9,
+        "relations": [
+            "Her",
+            "Soulmate",
+            "Him"
+        ]
+    },
+    {
+        "id": 61,
+        "name": "Enamel Work Earrings",
+        "price": 1299,
+        "category": "Earrings",
+        "image": "giva/products/enamel-work-earrings",
+        "rating": 4.5,
+        "description": "Colorful enamel work with traditional patterns.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 32,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 62,
+        "name": "Sapphire Blue Ring",
+        "price": 5499,
+        "category": "Rings",
+        "image": "giva/products/sapphire-blue-ring",
+        "rating": 4.8,
+        "description": "Deep blue sapphire on a vintage-style silver band.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 10,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 63,
+        "name": "Filigree Pendant Necklace",
+        "price": 3599,
+        "category": "Pendants",
+        "image": "giva/products/filigree-pendant",
+        "rating": 4.7,
+        "description": "Intricate filigree work in a circular pendant design.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 19,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 64,
+        "name": "Silver Charm Bracelet",
+        "price": 2699,
+        "category": "Bracelets",
+        "image": "giva/products/charm-bracelet",
+        "rating": 4.6,
+        "description": "Link bracelet with interchangeable silver charms.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 23,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 65,
+        "name": "Kids Butterfly Necklace",
+        "price": 699,
+        "category": "Kids Jewelry",
+        "image": "giva/products/kids-butterfly-necklace",
+        "rating": 4.4,
+        "description": "Cute butterfly pendant on a short chain for kids.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 55,
+        "relations": [
+            "Kids"
+        ]
+    },
+    {
+        "id": 66,
+        "name": "Oxidised Bangle Set",
+        "price": 3999,
+        "category": "Bangles",
+        "image": "giva/products/oxidised-bangle-set",
+        "rating": 4.7,
+        "description": "Set of 2 oxidised silver bangles with traditional designs.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 25,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 67,
+        "name": "Golden Quartz Earrings",
+        "price": 1599,
+        "category": "Earrings",
+        "image": "giva/products/golden-quartz-earrings",
+        "rating": 4.6,
+        "description": "Warm-toned golden quartz stones in silver settings.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 21,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 68,
+        "name": "Sacred Geometry Ring",
+        "price": 2199,
+        "category": "Rings",
+        "image": "giva/products/sacred-geometry-ring",
+        "rating": 4.5,
+        "description": "Modern sacred geometry pattern on a minimalist band.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 27,
+        "relations": [
+            "Her",
+            "Him"
+        ]
+    },
+    {
+        "id": 69,
+        "name": "Premium Silver Anklet Pair",
+        "price": 2499,
+        "category": "Anklets",
+        "image": "giva/products/premium-anklet-pair",
+        "rating": 4.7,
+        "description": "Matching pair of intricately designed silver anklets.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 30,
+        "relations": [
+            "Her"
+        ]
+    },
+    {
+        "id": 70,
+        "name": "Cubic Zirconia Stud Earrings",
+        "price": 2899,
+        "category": "Earrings",
+        "image": "giva/products/cz-stud-earrings",
+        "rating": 4.8,
+        "description": "Brilliant cubic zirconia studs that sparkle like diamonds.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 18,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 71,
+        "name": "Vintage Cameo Ring",
+        "price": 3899,
+        "category": "Rings",
+        "image": "giva/products/vintage-cameo-ring",
+        "rating": 4.6,
+        "description": "Classical cameo design on an antique-style silver band.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 8,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 72,
+        "name": "Lapis Lazuli Pendant",
+        "price": 2599,
+        "category": "Pendants",
+        "image": "giva/products/lapis-lazuli-pendant",
+        "rating": 4.7,
+        "description": "Deep blue lapis lazuli stone with silver accents.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 14,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 73,
+        "name": "Men's Signet Ring",
+        "price": 4299,
+        "category": "Men's Jewelry",
+        "image": "giva/products/mens-signet-ring",
+        "rating": 4.7,
+        "description": "Classic signet ring with personalization space.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 11,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 74,
+        "name": "Floral Nose Pin",
+        "price": 899,
+        "category": "Nose Pins",
+        "image": "giva/products/floral-nose-pin",
+        "rating": 4.4,
+        "description": "Delicate floral design with pearl center.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 48,
+        "relations": [
+            "Sister"
+        ]
+    },
+    {
+        "id": 75,
+        "name": "Garnet Gemstone Bracelet",
+        "price": 3499,
+        "category": "Bracelets",
+        "image": "giva/products/garnet-bracelet",
+        "rating": 4.6,
+        "description": "Deep red garnet beads on an elastic band.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 16,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 76,
+        "name": "Art Deco Necklace",
+        "price": 5499,
+        "category": "Necklaces",
+        "image": "giva/products/art-deco-necklace",
+        "rating": 4.8,
+        "description": "Geometric art deco pattern with crystal stones.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 9,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 77,
+        "name": "Silver Toe Ring Set",
+        "price": 899,
+        "category": "Toe Rings",
+        "image": "giva/products/silver-toe-ring-set",
+        "rating": 4.5,
+        "description": "Set of 3 adjustable silver toe rings.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 52,
+        "relations": [
+            "Her"
+        ]
+    },
+    {
+        "id": 78,
+        "name": "Personalized Gift Card",
+        "price": 5000,
+        "category": "Gift Cards",
+        "image": "giva/products/gift-card",
+        "rating": 4.9,
+        "description": "Redeemable digital gift card with personalised message.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 100,
+        "relations": [
+            "Her",
+            "Him"
+        ]
+    },
+    {
+        "id": 79,
+        "name": "Jade Healing Bracelet",
+        "price": 2799,
+        "category": "Bracelets",
+        "image": "giva/products/jade-healing-bracelet",
+        "rating": 4.7,
+        "description": "Green jade beads for wellness and balance.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 24,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 80,
+        "name": "Emerald Cut Pendant",
+        "price": 4799,
+        "category": "Pendants",
+        "image": "giva/products/emerald-cut-pendant",
+        "rating": 4.8,
+        "description": "Geometric emerald-cut crystal in a modern setting.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 12,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 81,
+        "name": "Silver Perfume Bottle Pendant",
+        "price": 1999,
+        "category": "Pendants",
+        "image": "giva/products/perfume-bottle-pendant",
+        "rating": 4.5,
+        "description": "Cute miniature perfume bottle charm pendant.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 31,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 82,
+        "name": "Luxury Silver Gift Set",
+        "price": 12999,
+        "category": "Sets",
+        "image": "giva/products/luxury-gift-set",
+        "rating": 4.9,
+        "description": "Premium gift set with necklace, earrings, and bracelet.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 6,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 83,
+        "name": "Men's Beaded Bracelet",
+        "price": 1899,
+        "category": "Bracelets",
+        "image": "giva/products/mens-beaded-bracelet",
+        "rating": 4.6,
+        "description": "Masculine beaded bracelet with tiger eye stones.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 26,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 84,
+        "name": "Traditional Ghungroo",
+        "price": 1599,
+        "category": "Anklets",
+        "image": "giva/products/traditional-ghungroo",
+        "rating": 4.7,
+        "description": "Authentic ghungroos (ankle bells) for classical dance.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 38,
+        "relations": [
+            "Her"
+        ]
+    },
+    {
+        "id": 85,
+        "name": "Multi Gemstone Ring",
+        "price": 5899,
+        "category": "Rings",
+        "image": "giva/products/multi-gemstone-ring",
+        "rating": 4.8,
+        "description": "Stunning multi-colored gemstone arrangement on silver.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 10,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 86,
+        "name": "Dainty Gold-Plated Earrings",
+        "price": 999,
+        "category": "Earrings",
+        "image": "giva/products/dainty-gold-earrings",
+        "rating": 4.4,
+        "description": "Simple and elegant gold-plated drop earrings.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 45,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 87,
+        "name": "Antique Gold Mangalsutra",
+        "price": 8499,
+        "category": "Mangalsutras",
+        "image": "giva/products/antique-gold-mangalsutra",
+        "rating": 4.9,
+        "description": "Antique-finish gold mangalsutra with traditional design.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 5,
+        "relations": [
+            "Her",
+            "Soulmate"
+        ]
+    },
+    {
+        "id": 88,
+        "name": "Rose Gold Coin Necklace",
+        "price": 4899,
+        "category": "Coins",
+        "image": "giva/products/rose-gold-coin-necklace",
+        "rating": 4.7,
+        "description": "Antique coin pendant on a rose gold chain.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 15,
+        "relations": [
+            "Her",
+            "Him"
+        ]
+    },
+    {
+        "id": 89,
+        "name": "Kids Colorful Bangles Set",
+        "price": 1299,
+        "category": "Kids Jewelry",
+        "image": "giva/products/kids-colorful-bangles",
+        "rating": 4.6,
+        "description": "Bright colorful plastic bangles with safety clasps.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 60,
+        "relations": [
+            "Kids"
+        ]
+    },
+    {
+        "id": 90,
+        "name": "Luxury Designer Watch",
+        "price": 14999,
+        "category": "Watches",
+        "image": "giva/products/designer-watch",
+        "rating": 4.9,
+        "description": "Premium designer watch with leather strap and crystal dial.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 3,
+        "relations": [
+            "Him",
+            "Brother"
+        ]
+    },
+    {
+        "id": 91,
+        "name": "Silver Compass Pendant",
+        "price": 2199,
+        "category": "Pendants",
+        "image": "giva/products/compass-pendant",
+        "rating": 4.6,
+        "description": "Vintage compass design symbolizing direction and guidance.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 20,
+        "relations": [
+            "Him",
+            "Her"
+        ]
+    },
+    {
+        "id": 92,
+        "name": "Turquoise and Silver Bracelet",
+        "price": 2999,
+        "category": "Bracelets",
+        "image": "giva/products/turquoise-silver-bracelet",
+        "rating": 4.7,
+        "description": "Vibrant turquoise stones with intricate silver work.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 18,
+        "relations": [
+            "Her",
+            "Sister"
+        ]
+    },
+    {
+        "id": 93,
+        "name": "Nose Pin Pair Bundle",
+        "price": 1499,
+        "category": "Nose Pins",
+        "image": "giva/products/nose-pin-pair-bundle",
+        "rating": 4.5,
+        "description": "Pack of 2 different traditional nose pins.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 50,
+        "relations": [
+            "Sister"
+        ]
+    },
+    {
+        "id": 94,
+        "name": "Semi-Precious Stone Necklace",
+        "price": 3899,
+        "category": "Necklaces",
+        "image": "giva/products/semi-precious-necklace",
+        "rating": 4.8,
+        "description": "Mix of semi-precious stones on a traditional chain.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 11,
+        "relations": [
+            "Mom",
+            "Her"
+        ]
+    },
+    {
+        "id": 95,
+        "name": "Silver Spoon Ring",
+        "price": 1699,
+        "category": "Rings",
+        "image": "giva/products/spoon-ring",
+        "rating": 4.4,
+        "description": "Unique vintage silver spoon wrapped into a ring.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 13,
+        "relations": [
+            "Her",
+            "Bestie"
+        ]
+    },
+    {
+        "id": 96,
+        "name": "Premium Fragrance Gift Set",
+        "price": 3499,
+        "category": "Perfumes",
+        "image": "giva/products/fragrance-gift-set",
+        "rating": 4.7,
+        "description": "Luxury fragrance set with multiple scents.",
+        "isTrending": false,
+        "isNew": true,
+        "stock": 22,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 97,
+        "name": "Festive Gold Jewelry Set",
+        "price": 18999,
+        "category": "Sets",
+        "image": "giva/products/festive-gold-set",
+        "rating": 4.9,
+        "description": "Complete festival jewelry set with necklace, earrings, bracelet, and ring.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 4,
+        "relations": [
+            "Her",
+            "Mom"
+        ]
+    },
+    {
+        "id": 98,
+        "name": "Minimalist Silver Anklet",
+        "price": 1099,
+        "category": "Anklets",
+        "image": "giva/products/minimalist-anklet",
+        "rating": 4.5,
+        "description": "Simple geometric design on a sleek silver chain.",
+        "isTrending": false,
+        "isNew": false,
+        "stock": 35,
+        "relations": [
+            "Her"
+        ]
+    },
+    {
+        "id": 99,
+        "name": "Vintage Wedding Ring",
+        "price": 6999,
+        "category": "Rings",
+        "image": "giva/products/vintage-wedding-ring",
+        "rating": 4.9,
+        "description": "Exquisite vintage-inspired ring with filigree details.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 6,
+        "relations": [
+            "Her",
+            "Soulmate"
+        ]
+    },
+    {
+        "id": 100,
+        "name": "Gold Plated Occasions Collection",
+        "price": 24999,
+        "category": "Occasions",
+        "image": "giva/products/occasions-collection",
+        "rating": 4.9,
+        "description": "Ultimate premium collection for all occasions with handpicked pieces.",
+        "isTrending": true,
+        "isNew": true,
+        "stock": 2,
+        "relations": [
+            "Her",
+            "Mom",
+            "Sister"
+        ]
+    },
+    {
+        "id": 101,
+        "name": "diamond earrings",
+        "price": 35000,
+        "category": "Earrings",
+        "image": "https://res.cloudinary.com/ded5bccrb/image/upload/v1776419142/earring_1_uxb5ll.jpg",
+        "rating": 5,
+        "description": "Elegant rose-gold drop earrings with braided teardrop frames and a sparkling stone cluster.\nLightweight, feminine, and perfect for bridal or evening wear.",
+        "isTrending": true,
+        "isNew": false,
+        "stock": 10,
+        "relations": [
+            "Her"
+        ]
+    }
 ]

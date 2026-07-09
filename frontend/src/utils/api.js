@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useAuth } from '../store/useAuth'; // Import your auth store
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -27,11 +27,10 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    // If the backend returns 401, the token is dead/invalid
     if (error.response && error.response.status === 401) {
       console.warn("Session expired. Wiping data and redirecting...");
-      
-      // Force logout to clear all User A's data immediately
+      // Flag the expiry so the home page can show a toast on reload
+      sessionStorage.setItem('giva_session_expired', '1');
       useAuth.getState().logout();
     }
     return Promise.reject(error);

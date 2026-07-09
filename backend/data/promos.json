@@ -1,49 +1,116 @@
 [
-  {
-    "id": "promo_001",
-    "code": "GIVA10",
-    "description": "10% off on your first order",
-    "discount_type": "percentage",
-    "value": 10,
-    "min_purchase": 1000,
-    "max_discount": 500,
-    "active": true
-  },
-  {
-    "id": "promo_002",
-    "code": "WELCOME500",
-    "description": "Flat ₹500 off on premium silver sets",
-    "discount_type": "fixed",
-    "value": 500,
-    "min_purchase": 4000,
-    "active": true
-  },
-  {
-    "id": "promo_003",
-    "code": "FESTIVE20",
-    "description": "Special 20% Festive Discount",
-    "discount_type": "percentage",
-    "value": 20,
-    "min_purchase": 2500,
-    "max_discount": 1000,
-    "active": true
-  },
-  {
-    "id": "promo_004",
-    "code": "GOLDENBULL",
-    "description": "Flat ₹1000 off on 24K Gold Plated Jewelry",
-    "discount_type": "fixed",
-    "value": 1000,
-    "min_purchase": 8000,
-    "active": true
-  },
-  {
-    "id": "promo_005",
-    "code": "FREESHIP",
-    "description": "Free Shipping on orders below ₹1000",
-    "discount_type": "shipping",
-    "value": 0,
-    "min_purchase": 0,
-    "active": false
-  }
+    {
+        "id": "promo_001",
+        "code": "GIVA10",
+        "description": "10% off on your first order",
+        "discount_type": "percentage",
+        "value": 10,
+        "min_purchase": 1000,
+        "max_discount": 500,
+        "active": true
+    },
+    {
+        "id": "promo_002",
+        "code": "WELCOME500",
+        "description": "Flat \u00e2\u201a\u00b9500 off on premium silver sets",
+        "discount_type": "fixed",
+        "value": 500,
+        "min_purchase": 4000,
+        "active": true
+    },
+    {
+        "id": "promo_003",
+        "code": "FESTIVE20",
+        "description": "Special 20% Festive Discount",
+        "discount_type": "percentage",
+        "value": 20,
+        "min_purchase": 2500,
+        "max_discount": 1000,
+        "active": true
+    },
+    {
+        "id": "promo_004",
+        "code": "GOLDENBULL",
+        "description": "Flat \u00e2\u201a\u00b91000 off on 24K Gold Plated Jewelry",
+        "discount_type": "fixed",
+        "value": 1000,
+        "min_purchase": 8000,
+        "active": true
+    },
+    {
+        "id": "promo_005",
+        "code": "FREESHIP",
+        "description": "Free Shipping on orders below \u00e2\u201a\u00b91000",
+        "discount_type": "shipping",
+        "value": 0,
+        "min_purchase": 0,
+        "active": false
+    },
+    {
+        "id": "promo_006",
+        "code": "SILVER15",
+        "description": "15% off on all silver jewelry",
+        "discount_type": "percentage",
+        "value": 15,
+        "min_purchase": 1500,
+        "max_discount": 750,
+        "active": true
+    },
+    {
+        "id": "promo_007",
+        "code": "BESTIE2024",
+        "description": "Flat \u00e2\u201a\u00b9300 off when you buy for your bestie",
+        "discount_type": "fixed",
+        "value": 300,
+        "min_purchase": 2000,
+        "active": true
+    },
+    {
+        "id": "promo_008",
+        "code": "MOMSPECIAL",
+        "description": "20% off on premium mom jewelry collection",
+        "discount_type": "percentage",
+        "value": 20,
+        "min_purchase": 5000,
+        "max_discount": 1500,
+        "active": true
+    },
+    {
+        "id": "promo_009",
+        "code": "SPARKLE25",
+        "description": "Extra 25% off on selected earrings",
+        "discount_type": "percentage",
+        "value": 25,
+        "min_purchase": 3000,
+        "max_discount": 2000,
+        "active": true
+    },
+    {
+        "id": "promo_010",
+        "code": "NEWUSER100",
+        "description": "\u00e2\u201a\u00b9100 bonus on signup",
+        "discount_type": "fixed",
+        "value": 100,
+        "min_purchase": 0,
+        "active": true
+    },
+    {
+        "id": "promo_011",
+        "code": "LOYALTY20",
+        "description": "20% off for repeat customers",
+        "discount_type": "percentage",
+        "value": 20,
+        "min_purchase": 2000,
+        "max_discount": 1000,
+        "active": false
+    },
+    {
+        "id": "promo_012",
+        "code": "SUMMER2024",
+        "description": "Flat \u00e2\u201a\u00b9750 off on summer collection",
+        "discount_type": "fixed",
+        "value": 750,
+        "min_purchase": 5000,
+        "active": true
+    }
 ]

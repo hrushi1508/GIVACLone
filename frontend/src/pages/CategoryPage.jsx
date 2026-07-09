@@ -121,7 +121,7 @@ export default function CategoryPage({ onAuthRequired }) {
         setIsEmpty(true);
         setLoading(false);
       });
-  }, [categoryName, priceRange, selectedSubCategory, isMainCategory, subCategories]);
+  }, [categoryName, priceRange, selectedSubCategory, isMainCategory, slug]);
 
   return (
     <div className="min-h-screen bg-white text-giva-dark pb-20">

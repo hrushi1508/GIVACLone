@@ -72,10 +72,11 @@ export default function ProductCard({ product, onOpenModal, onAuthRequired }) {
         </div>
 
         {/* Wishlist Button */}
-        <motion.button 
+        <motion.button
           onClick={handleWishlist}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          aria-label={isFavorite ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
           className="absolute top-3 right-3 z-20 p-2.5 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300"
         >
           <Heart 
@@ -108,20 +109,22 @@ export default function ProductCard({ product, onOpenModal, onAuthRequired }) {
         />
         
         {/* Quick View Button */}
-        <motion.button 
+        <motion.button
           onClick={(e) => {
             e.stopPropagation();
             onOpenModal?.();
           }}
+          aria-label={`Quick view ${product.name}`}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
         >
           <Eye size={20} className="text-giva-pink" />
         </motion.button>
-        
+
         {/* Add to Bag Button */}
-        <motion.button 
+        <motion.button
           onClick={handleAddClick}
           whileHover={{ y: -2 }}
+          aria-label={`${isAuthenticated && cartItem ? 'Add another' : 'Add'} ${product.name} to bag`}
           className="absolute bottom-0 z-10 w-full bg-giva-dark text-white py-3 text-[10px] font-bold uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg"
         >
           {isAuthenticated && cartItem ? "Add Another" : "Add to Bag"}

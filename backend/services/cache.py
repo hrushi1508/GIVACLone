@@ -14,3 +14,7 @@ class SimpleCache:
     def set(self, data):
         self.data = data
         self.last_updated = time.time()
+
+    def invalidate(self):
+        self.data = None
+        self.last_updated = 0
